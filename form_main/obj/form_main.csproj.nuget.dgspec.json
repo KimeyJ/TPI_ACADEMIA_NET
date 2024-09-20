@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\form_main\\form_main.csproj": {}
+    "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\form_main\\form_main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\Domain\\Domain.csproj": {
+    "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\jeand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\maste\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Microsoft\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jeand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maste\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,6 +52,10 @@
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -89,20 +92,20 @@
         }
       }
     },
-    "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\form_main\\form_main.csproj": {
+    "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\form_main\\form_main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\form_main\\form_main.csproj",
+        "projectUniqueName": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\form_main\\form_main.csproj",
         "projectName": "form_main",
-        "projectPath": "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\form_main\\form_main.csproj",
-        "packagesPath": "C:\\Users\\jeand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\form_main\\obj\\",
+        "projectPath": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\form_main\\form_main.csproj",
+        "packagesPath": "C:\\Users\\maste\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\form_main\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Microsoft\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jeand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maste\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -111,15 +114,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\jeand\\OneDrive\\Escritorio\\Repos\\TPI-Academia\\Domain\\Domain.csproj"
+              "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj"
               }
             }
           }
@@ -142,6 +144,10 @@
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

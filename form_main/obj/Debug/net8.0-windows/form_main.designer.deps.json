@@ -62,6 +62,17 @@
           }
         }
       },
+      "Microsoft.AspNetCore.OpenApi/8.0.8": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.4.3"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "assemblyVersion": "8.0.8.0",
+            "fileVersion": "8.0.824.36908"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -679,6 +690,14 @@
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.OpenApi/1.4.3": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "1.4.3.0",
+            "fileVersion": "1.4.3.0"
+          }
+        }
+      },
       "Microsoft.SqlServer.Server/1.0.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
@@ -1251,6 +1270,13 @@
       "path": "microsoft.aspnet.webapi.client/6.0.0",
       "hashPath": "microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.OpenApi/8.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wNHhohqP8rmsQ4UhKbd6jZMD6l+2Q/+DvRBT0Cgqeuglr13aF6sSJWicZKCIhZAUXzuhkdwtHVc95MlPlFk0dA==",
+      "path": "microsoft.aspnetcore.openapi/8.0.8",
+      "hashPath": "microsoft.aspnetcore.openapi.8.0.8.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1523,6 +1549,13 @@
       "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/1.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rURwggB+QZYcSVbDr7HSdhw/FELvMlriW10OeOzjPT7pstefMo7IThhtNtDudxbXhW+lj0NfX72Ka5EDsG8x6w==",
+      "path": "microsoft.openapi/1.4.3",
+      "hashPath": "microsoft.openapi.1.4.3.nupkg.sha512"
     },
     "Microsoft.SqlServer.Server/1.0.0": {
       "type": "package",

@@ -40,9 +40,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 90);
+            label1.Location = new Point(13, 68);
             label1.Name = "label1";
-            label1.Size = new Size(139, 20);
+            label1.Size = new Size(110, 15);
             label1.TabIndex = 0;
             label1.Text = "Nombre de Usuario";
             label1.Click += label1_Click;
@@ -50,18 +50,19 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(15, 169);
+            label2.Location = new Point(13, 127);
             label2.Name = "label2";
-            label2.Size = new Size(83, 20);
+            label2.Size = new Size(67, 15);
             label2.TabIndex = 1;
             label2.Text = "Contraseña";
             label2.Click += label2_Click;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(350, 218);
+            btnLogin.Location = new Point(306, 164);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(94, 29);
+            btnLogin.Size = new Size(82, 22);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Ingresar";
             btnLogin.UseVisualStyleBackColor = true;
@@ -69,27 +70,29 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(188, 87);
+            txtUsuario.Location = new Point(164, 65);
+            txtUsuario.Margin = new Padding(3, 2, 3, 2);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(256, 27);
+            txtUsuario.Size = new Size(224, 23);
             txtUsuario.TabIndex = 3;
             txtUsuario.TextAlign = HorizontalAlignment.Center;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(188, 162);
+            txtPassword.Location = new Point(164, 122);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(256, 27);
+            txtPassword.Size = new Size(224, 23);
             txtPassword.TabIndex = 4;
             txtPassword.TextAlign = HorizontalAlignment.Center;
             // 
             // linkForgotPass
             // 
             linkForgotPass.AutoSize = true;
-            linkForgotPass.Location = new Point(12, 268);
+            linkForgotPass.Location = new Point(10, 201);
             linkForgotPass.Name = "linkForgotPass";
-            linkForgotPass.Size = new Size(149, 20);
+            linkForgotPass.Size = new Size(119, 15);
             linkForgotPass.TabIndex = 5;
             linkForgotPass.TabStop = true;
             linkForgotPass.Text = "Olvide mi contraseña";
@@ -98,18 +101,18 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(166, 31);
+            label3.Location = new Point(145, 23);
             label3.Name = "label3";
-            label3.Size = new Size(148, 28);
+            label3.Size = new Size(118, 21);
             label3.TabIndex = 6;
             label3.Text = "Inicio de Sesion";
             label3.Click += label3_Click;
             // 
             // form_login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(484, 308);
+            ClientSize = new Size(424, 231);
             Controls.Add(label3);
             Controls.Add(linkForgotPass);
             Controls.Add(txtPassword);
@@ -117,8 +120,10 @@
             Controls.Add(btnLogin);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "form_login";
             Text = "Login";
+            Load += form_login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

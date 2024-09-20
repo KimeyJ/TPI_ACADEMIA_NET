@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    internal class AcademiaContext : DbContext
+    public class AcademiaContext : DbContext
     {
-        internal AcademiaContext(DbContextOptions<AcademiaContext> options) : base(options)
-        {
-        }
+        public DbSet<Especialidad> Especialidades { get; set; }
+
+        public AcademiaContext(DbContextOptions<AcademiaContext> options) : base(options) { }
+
     }
 }

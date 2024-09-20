@@ -14,7 +14,7 @@ namespace WindowsForm
         private static HttpClient client = new HttpClient();
         static EspecialidadesApiClient()
         {
-            client.BaseAddress = new Uri("http://localhost:5183/");
+            client.BaseAddress = new Uri("http://localhost:49893/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));

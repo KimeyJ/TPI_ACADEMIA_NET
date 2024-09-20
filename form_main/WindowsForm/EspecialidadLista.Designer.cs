@@ -49,7 +49,7 @@
             clientesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             clientesDataGridView.Size = new Size(858, 360);
             clientesDataGridView.TabIndex = 0;
-            clientesDataGridView.CellContentClick += clientesDataGridView_CellContentClick;
+            //clientesDataGridView.CellContentClick += clientesDataGridView_CellContentClick;
             // 
             // agregarButton
             // 
@@ -96,7 +96,7 @@
             Margin = new Padding(2, 2, 2, 2);
             Name = "EspecialidadLista";
             Text = "Especialidades";
-            Load += Clientes_Load;
+            Load += Especialidad_Load;
             ((System.ComponentModel.ISupportInitialize)clientesDataGridView).EndInit();
             ResumeLayout(false);
         }

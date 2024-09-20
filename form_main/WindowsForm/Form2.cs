@@ -43,5 +43,10 @@ namespace form_main
         {
 
         }
+
+        private void form_login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

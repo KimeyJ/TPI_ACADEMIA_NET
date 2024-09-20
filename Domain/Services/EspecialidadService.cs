@@ -4,49 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Model;
+using Domain;
 
 namespace Domain.Services
 {
     public class EspecialidadService
     {
+        private readonly AcademiaContext _context;
         public void Add(Especialidad especialidad)
         {
-            using var context = new EspecialidadContext;
-
-            context.Personas.Add(especialidad);
-            context.SaveChanges();
+            _context.Especialidades.Add(especialidad);
+            _context.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            using var context = new EspecialidadContext;
-            Especialidad? especialidadToDelete = context.Especialidades.Find(id);
+            //using var context = new AcademiaContext();
+            Especialidad? especialidadToDelete = _context.Especialidades.Find(id);
             if (especialidadToDelete != null)
             {
-                context.Especialidades.Remove(especialidadToDelete);
-                context.SaveChanges();
+                _context.Especialidades.Remove(especialidadToDelete);
+                _context.SaveChanges();
             }
         }
         public Especialidad? Get(int id)
         {
-            using var context = new EspecialidadContext();
-            return context.Especialidades.Find(id);
+            //using var context = new AcademiaContext();
+            return _context.Especialidades.Find(id);
         }
 
         public IEnumerable<Especialidad> GetAll()
         {
-            using var context = new EspecialidadContext();
+            //using var context = new AcademiaContext();
 
-            return context.Especialidades.ToList();
+            return _context.Especialidades.ToList();
         }
         public void Update(Especialidad especialidad)
         {
-            using var context = new EspecialidadContext();
-            Especialidad? especialidadToUpdate = context.Especialidades.Find(especialidad.Id);
+            //using var context = new AcademiaContext();
+            Especialidad? especialidadToUpdate = _context.Especialidades.Find(especialidad.Id);
             if (especialidadToUpdate != null)
             {
                 especialidadToUpdate.descripcion = especialidad.descripcion;
-                context.SaveChanges();
+                _context.SaveChanges();
             }
         }
     }
