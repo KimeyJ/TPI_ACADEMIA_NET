@@ -4601,23 +4601,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maste\\.nuget\\packages\\": {},
-    "D:\\Microsoft\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ALUMNO\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\form_main\\form_main.csproj",
+      "projectUniqueName": "C:\\Users\\ALUMNO\\Documents\\TPI_ACADEMIA_NET\\form_main\\form_main.csproj",
       "projectName": "form_main",
-      "projectPath": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\form_main\\form_main.csproj",
-      "packagesPath": "C:\\Users\\maste\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\form_main\\obj\\",
+      "projectPath": "C:\\Users\\ALUMNO\\Documents\\TPI_ACADEMIA_NET\\form_main\\form_main.csproj",
+      "packagesPath": "C:\\Users\\ALUMNO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ALUMNO\\Documents\\TPI_ACADEMIA_NET\\form_main\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Microsoft\\Shared\\NuGetPackages"
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\maste\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ALUMNO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4626,14 +4626,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\maste\\Desktop\\Repos\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj"
+            "C:\\Users\\ALUMNO\\Documents\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\ALUMNO\\Documents\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj"
             }
           }
         }
@@ -4642,11 +4643,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4709,7 +4705,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
