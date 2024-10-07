@@ -9,7 +9,6 @@ namespace Domain.Model
 {
     public class Plan
     {
-        [Key]
         public int Id { get; set; }
         [Required]
         public int Año { get; set; }

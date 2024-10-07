@@ -9,7 +9,6 @@ namespace Domain.Model
 {
     public class Especialidad
     {
-        [Key]
         public int Id { get; set; }
         public string descripcion { get; set; }
     }

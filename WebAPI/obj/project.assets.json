@@ -3333,23 +3333,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ALUMNO\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Octavio\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ALUMNO\\Documents\\TPI_ACADEMIA_NET\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Octavio\\Documents\\Desarrollo IDE\\Net\\TPI_ACADEMIA_NET\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\ALUMNO\\Documents\\TPI_ACADEMIA_NET\\WebAPI\\WebAPI.csproj",
-      "packagesPath": "C:\\Users\\ALUMNO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ALUMNO\\Documents\\TPI_ACADEMIA_NET\\WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\Octavio\\Documents\\Desarrollo IDE\\Net\\TPI_ACADEMIA_NET\\WebAPI\\WebAPI.csproj",
+      "packagesPath": "C:\\Users\\Octavio\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Octavio\\Documents\\Desarrollo IDE\\Net\\TPI_ACADEMIA_NET\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ALUMNO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Octavio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3365,8 +3365,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ALUMNO\\Documents\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\ALUMNO\\Documents\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj"
+            "C:\\Users\\Octavio\\Documents\\Desarrollo IDE\\Net\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Octavio\\Documents\\Desarrollo IDE\\Net\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj"
             }
           }
         }
@@ -3375,6 +3375,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3409,7 +3414,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

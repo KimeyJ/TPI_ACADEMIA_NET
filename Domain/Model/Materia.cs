@@ -9,9 +9,7 @@ namespace Domain.Model
 {
     public class Materia
     {
-        [Key]
         public int Id { get; set; }
-        [Key]
         public int IdPlan { get; set; }
         public string Descripcion { get; set; }
         public int HsSemanales {  get; set; }

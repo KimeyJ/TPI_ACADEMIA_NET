@@ -9,7 +9,6 @@ namespace Domain.Model
 {
     public class Curso
     {
-        [Key]
         public int Id { get; set; }
         [Required]
         public int MateriaId { get; set; }
