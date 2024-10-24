@@ -16,7 +16,7 @@ namespace form_main.WindowsForm
             ApplicationConfiguration.Initialize();
             //AcademiaContext context = new AcademiaContext();
             //Application.Run(new form_main());
-            Application.Run(new EspecialidadLista());
+            Application.Run(new form_login());
         }
     }
 }

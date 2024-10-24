@@ -77,4 +77,13 @@ app.MapDelete("/especialidades/{id}", (int id) =>
 .WithName("DeleteEspecialidad")
 .WithOpenApi();
 
+app.MapGet("/usuarios/count", () =>
+{
+    UsuarioService usuarioService = new UsuarioService();
+
+    return usuarioService.CountUsuario();
+})
+.WithName("CountUsuarios")
+.WithOpenApi();
+
 app.Run();

@@ -41,6 +41,14 @@ namespace Domain.Services
 
         }
 
+        public int CountUsuario()
+        {
+            using(var _context = new AcademiaContext())
+            {
+                return _context.Usuarios.Count();
+            }
+        }
+
         public IEnumerable<Usuario> GetAll()
         {
             using (var _context = new AcademiaContext())
