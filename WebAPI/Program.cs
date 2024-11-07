@@ -77,6 +77,96 @@ app.MapDelete("/especialidades/{id}", (int id) =>
 .WithName("DeleteEspecialidad")
 .WithOpenApi();
 
+app.MapGet("/personas/{id}", (int id) =>
+{
+    PersonaService personaService = new PersonaService();
+
+    return personaService.Get(id);
+})
+.WithName("Getpersonas")
+.WithOpenApi();
+
+app.MapGet("/personas", () =>
+{
+    PersonaService personaService = new PersonaService();
+
+    return personaService.GetAll();
+})
+.WithName("GetAllPersonas")
+.WithOpenApi();
+
+app.MapPost("/personas", (Persona Persona) =>
+{
+    PersonaService personaService = new PersonaService();
+
+    return personaService.Add(Persona);
+})
+.WithName("AddPersona")
+.WithOpenApi();
+
+app.MapPut("/personas", (Persona Persona) =>
+{
+    PersonaService personaService = new PersonaService();
+
+    personaService.Update(Persona);
+})
+.WithName("UpdatePersona")
+.WithOpenApi();
+
+app.MapDelete("/personas/{id}", (int id) =>
+{
+    PersonaService personaService = new PersonaService();
+
+    personaService.Delete(id);
+})
+.WithName("DeletePersona")
+.WithOpenApi();
+
+app.MapGet("/usuarios/{id}", (int id) =>
+{
+    UsuarioService usuarioService = new UsuarioService();
+
+    return usuarioService.Get(id);
+})
+.WithName("Getusuarios")
+.WithOpenApi();
+
+app.MapGet("/usuarios", () =>
+{
+    UsuarioService usuarioService = new UsuarioService();
+
+    return usuarioService.GetAll();
+})
+.WithName("GetAllUsuarios")
+.WithOpenApi();
+
+app.MapPost("/usuarios", (Usuario Usuario) =>
+{
+    UsuarioService usuarioService = new UsuarioService();
+
+    usuarioService.Add(Usuario);
+})
+.WithName("AddUsuario")
+.WithOpenApi();
+
+app.MapPut("/usuarios", (Usuario Usuario) =>
+{
+    UsuarioService usuarioService = new UsuarioService();
+
+    usuarioService.Update(Usuario);
+})
+.WithName("UpdateUsuario")
+.WithOpenApi();
+
+app.MapDelete("/usuarios/{id}", (int id) =>
+{
+    UsuarioService usuarioService = new UsuarioService();
+
+    usuarioService.Delete(id);
+})
+.WithName("DeleteUsuario")
+.WithOpenApi();
+
 app.MapGet("/usuarios/count", () =>
 {
     UsuarioService usuarioService = new UsuarioService();
@@ -84,6 +174,15 @@ app.MapGet("/usuarios/count", () =>
     return usuarioService.CountUsuario();
 })
 .WithName("CountUsuarios")
+.WithOpenApi();
+
+app.MapGet("/usuarios/login/{us}/{ps}", (string us, string ps) =>
+{
+    UsuarioService usuarioService = new UsuarioService();
+
+    return usuarioService.Authenticate(us, ps);
+})
+.WithName("AuthenticateUsuarios")
 .WithOpenApi();
 
 app.Run();

@@ -1,4 +1,5 @@
 ﻿using form_main.WindowsForm;
+using Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,15 +30,19 @@ namespace form_main
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
-            if (this.txtUsuario.Text == "Admin" && this.txtPassword.Text == "admin")
+            Usuario usuario = new Usuario();
+            UsuariosApiClient client = new UsuariosApiClient();
+            usuario.Username= txtUsuario.Text;
+            usuario.Password= txtPassword .Text;
+
+            if (await UsuariosApiClient.AuthenticateAsync(usuario.Username, usuario.Password))
             {
-                MessageBox.Show("Usted ha ingresado al sistema correctamente", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Logueo exitoso");
+                form_main frmMain = new form_main();
+                this.Hide();
+                frmMain.ShowDialog();
             }
         }
 
@@ -52,8 +57,9 @@ namespace form_main
             if (countUser == 0)
             {
                 MessageBox.Show("No hay un Usuario Maestro cargado en la base de datos, ahora sera redirigido para crear un nuevo usuario","Usuario Maestro Faltante",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                EspecialidadLista lista = new EspecialidadLista();
-                lista.ShowDialog();
+                frmPersona per = new frmPersona();
+                per.firstTimeBoot = true;
+                per.ShowDialog();
             }
         }
     }

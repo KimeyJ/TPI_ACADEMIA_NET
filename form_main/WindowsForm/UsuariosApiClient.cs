@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace form_main.WindowsForm
 {
@@ -67,6 +68,17 @@ namespace form_main.WindowsForm
         {
             HttpResponseMessage response = await client.PutAsJsonAsync("usuarios", usuario);
             response.EnsureSuccessStatusCode();
+        }
+
+        public static async Task<bool> AuthenticateAsync(string us, string ps)
+        {
+            bool rta = false;
+            HttpResponseMessage response = await client.GetAsync("usuarios/login/" + us +"/"+ ps);
+            if (response.IsSuccessStatusCode)
+            {
+                rta = await response.Content.ReadAsAsync<bool>();
+            }
+            return rta;
         }
     }
 

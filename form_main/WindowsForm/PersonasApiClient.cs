@@ -40,10 +40,15 @@ namespace form_main.WindowsForm
             }
             return personas;
         }
-        public async static Task AddAsync(Persona persona)
+        public async static Task<int> AddAsync(Persona persona)
         {
+            int id = 0;
             HttpResponseMessage response = await client.PostAsJsonAsync("personas", persona);
-            response.EnsureSuccessStatusCode();
+            if (response.IsSuccessStatusCode)
+            {
+                id = await response.Content.ReadAsAsync<int>();
+            }
+            return id;
         }
 
         public static async Task DeleteAsync(int id)

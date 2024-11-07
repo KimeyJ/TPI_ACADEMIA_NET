@@ -49,6 +49,22 @@ namespace Domain.Services
             }
         }
 
+        public bool Authenticate(string user, string pass)
+        {
+            using(var _context = new AcademiaContext())
+            {
+                Usuario rta = _context.Usuarios.Single(u=> u.Username == user && u.Password == pass);
+                if(rta != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public IEnumerable<Usuario> GetAll()
         {
             using (var _context = new AcademiaContext())

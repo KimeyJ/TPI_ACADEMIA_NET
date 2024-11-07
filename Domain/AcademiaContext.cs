@@ -40,7 +40,7 @@ namespace Domain
             modelBuilder.Entity<Materia>()
                   .HasKey(m => new { m.Id, m.IdPlan });
             modelBuilder.Entity<Persona>()
-                  .HasKey(m => new { m.Id });
+                  .HasKey(m => new { m.Legajo });
             modelBuilder.Entity<Plan>()
                   .HasKey(m => new { m.Id});
             modelBuilder.Entity<Usuario>()
