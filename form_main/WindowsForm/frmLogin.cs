@@ -35,12 +35,13 @@ namespace form_main
             Usuario usuario = new Usuario();
             UsuariosApiClient client = new UsuariosApiClient();
             usuario.Username= txtUsuario.Text;
-            usuario.Password= txtPassword .Text;
+            usuario.Password= txtPassword.Text;
 
             if (await UsuariosApiClient.AuthenticateAsync(usuario.Username, usuario.Password))
             {
                 MessageBox.Show("Logueo exitoso");
                 form_main frmMain = new form_main();
+                frmMain.usuarioActual = usuario;
                 this.Hide();
                 frmMain.ShowDialog();
             }

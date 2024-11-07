@@ -1,3 +1,5 @@
+using Domain.Model;
+
 namespace form_main
 {
     public partial class form_main : Form
@@ -7,10 +9,12 @@ namespace form_main
             InitializeComponent();
         }
 
+        public Persona personaActual;
+        public Usuario usuarioActual;
+
         private void form_main_Shown(object sender, EventArgs e)
         {
-            form_login appLogin = new form_login();
-            appLogin.Show();
+           
 
         }
 
