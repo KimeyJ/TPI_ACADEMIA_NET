@@ -88,9 +88,10 @@
             // 
             // button1
             // 
+            button1.AutoSize = true;
             button1.Location = new Point(214, 226);
             button1.Name = "button1";
-            button1.Size = new Size(117, 29);
+            button1.Size = new Size(117, 30);
             button1.TabIndex = 7;
             button1.Text = "Crear Usuario";
             button1.UseVisualStyleBackColor = true;

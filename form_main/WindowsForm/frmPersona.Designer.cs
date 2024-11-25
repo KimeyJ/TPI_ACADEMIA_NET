@@ -38,9 +38,6 @@
             label4 = new Label();
             label5 = new Label();
             txtMail = new TextBox();
-            rbAl = new RadioButton();
-            rbProf = new RadioButton();
-            rbAdm = new RadioButton();
             button1 = new Button();
             mcNac = new MonthCalendar();
             label6 = new Label();
@@ -126,44 +123,12 @@
             txtMail.Size = new Size(203, 27);
             txtMail.TabIndex = 9;
             // 
-            // rbAl
-            // 
-            rbAl.AutoSize = true;
-            rbAl.Location = new Point(457, 41);
-            rbAl.Name = "rbAl";
-            rbAl.Size = new Size(82, 24);
-            rbAl.TabIndex = 10;
-            rbAl.TabStop = true;
-            rbAl.Text = "Alumno";
-            rbAl.UseVisualStyleBackColor = true;
-            // 
-            // rbProf
-            // 
-            rbProf.AutoSize = true;
-            rbProf.Location = new Point(545, 41);
-            rbProf.Name = "rbProf";
-            rbProf.Size = new Size(85, 24);
-            rbProf.TabIndex = 11;
-            rbProf.TabStop = true;
-            rbProf.Text = "Profesor";
-            rbProf.UseVisualStyleBackColor = true;
-            // 
-            // rbAdm
-            // 
-            rbAdm.AutoSize = true;
-            rbAdm.Location = new Point(636, 41);
-            rbAdm.Name = "rbAdm";
-            rbAdm.Size = new Size(121, 24);
-            rbAdm.TabIndex = 12;
-            rbAdm.TabStop = true;
-            rbAdm.Text = "Adminstrador";
-            rbAdm.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
-            button1.Location = new Point(663, 385);
+            button1.AutoSize = true;
+            button1.Location = new Point(633, 319);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(94, 30);
             button1.TabIndex = 13;
             button1.Text = "Registrar";
             button1.UseVisualStyleBackColor = true;
@@ -171,7 +136,7 @@
             // 
             // mcNac
             // 
-            mcNac.Location = new Point(467, 126);
+            mcNac.Location = new Point(467, 69);
             mcNac.MaxDate = new DateTime(2099, 12, 31, 0, 0, 0, 0);
             mcNac.MaxSelectionCount = 1;
             mcNac.Name = "mcNac";
@@ -180,7 +145,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(472, 93);
+            label6.Location = new Point(472, 36);
             label6.Name = "label6";
             label6.Size = new Size(196, 20);
             label6.TabIndex = 15;
@@ -190,13 +155,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 426);
+            ClientSize = new Size(800, 363);
             Controls.Add(label6);
             Controls.Add(mcNac);
             Controls.Add(button1);
-            Controls.Add(rbAdm);
-            Controls.Add(rbProf);
-            Controls.Add(rbAl);
             Controls.Add(txtMail);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -226,9 +188,6 @@
         private Label label4;
         private Label label5;
         private TextBox txtMail;
-        private RadioButton rbAl;
-        private RadioButton rbProf;
-        private RadioButton rbAdm;
         private Button button1;
         private MonthCalendar mcNac;
         private Label label6;

@@ -30,10 +30,10 @@ namespace form_main.WindowsForm
             return persona;
         }
 
-        public static async Task<IEnumerable<Persona>> GetAllAsync()
+        public static async Task<IEnumerable<Persona>> GetAllAsync(int tp)
         {
             IEnumerable<Persona> personas = null;
-            HttpResponseMessage response = await client.GetAsync("personas");
+            HttpResponseMessage response = await client.GetAsync("personas/consulta/" + tp);
             if (response.IsSuccessStatusCode)
             {
                 personas = await response.Content.ReadAsAsync<IEnumerable<Persona>>();

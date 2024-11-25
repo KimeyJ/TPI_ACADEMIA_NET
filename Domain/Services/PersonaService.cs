@@ -43,11 +43,20 @@ namespace Domain.Services
 
         }
 
-        public IEnumerable<Persona> GetAll()
+        public IEnumerable<Persona> GetAll(int tipoPersona)
         {
             using (var _context = new AcademiaContext())
             {
                 return _context.Personas.ToList();
+                /*if (tipoPersona == 0)
+                {
+                    return _context.Personas.ToList();
+                }
+                else
+                {
+                    return _context.Personas.Where(u => u.Tipo_persona == tipoPersona);
+                }¨*/
+                
             }
         }
         public void Update(Persona Persona)

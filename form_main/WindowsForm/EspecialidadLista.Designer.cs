@@ -40,7 +40,7 @@
             clientesDataGridView.AllowUserToOrderColumns = true;
             clientesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             clientesDataGridView.Location = new Point(24, 24);
-            clientesDataGridView.Margin = new Padding(2, 2, 2, 2);
+            clientesDataGridView.Margin = new Padding(2);
             clientesDataGridView.MultiSelect = false;
             clientesDataGridView.Name = "clientesDataGridView";
             clientesDataGridView.ReadOnly = true;
@@ -49,12 +49,12 @@
             clientesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             clientesDataGridView.Size = new Size(858, 360);
             clientesDataGridView.TabIndex = 0;
-            //clientesDataGridView.CellContentClick += clientesDataGridView_CellContentClick;
+            clientesDataGridView.CellContentClick += clientesDataGridView_CellContentClick;
             // 
             // agregarButton
             // 
             agregarButton.Location = new Point(790, 401);
-            agregarButton.Margin = new Padding(2, 2, 2, 2);
+            agregarButton.Margin = new Padding(2);
             agregarButton.Name = "agregarButton";
             agregarButton.Size = new Size(92, 29);
             agregarButton.TabIndex = 1;
@@ -65,7 +65,7 @@
             // eliminarButton
             // 
             eliminarButton.Location = new Point(578, 401);
-            eliminarButton.Margin = new Padding(2, 2, 2, 2);
+            eliminarButton.Margin = new Padding(2);
             eliminarButton.Name = "eliminarButton";
             eliminarButton.Size = new Size(92, 29);
             eliminarButton.TabIndex = 2;
@@ -76,7 +76,7 @@
             // modificarButton
             // 
             modificarButton.Location = new Point(684, 401);
-            modificarButton.Margin = new Padding(2, 2, 2, 2);
+            modificarButton.Margin = new Padding(2);
             modificarButton.Name = "modificarButton";
             modificarButton.Size = new Size(92, 29);
             modificarButton.TabIndex = 3;
@@ -93,7 +93,7 @@
             Controls.Add(eliminarButton);
             Controls.Add(agregarButton);
             Controls.Add(clientesDataGridView);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "EspecialidadLista";
             Text = "Especialidades";
             Load += Especialidad_Load;

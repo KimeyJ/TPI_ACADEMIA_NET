@@ -32,18 +32,25 @@ namespace form_main
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
+            Usuario buffer = new Usuario();
+            Usuario rta = new Usuario();
             UsuariosApiClient client = new UsuariosApiClient();
-            usuario.Username= txtUsuario.Text;
-            usuario.Password= txtPassword.Text;
+            buffer.Username= txtUsuario.Text;
+            buffer.Password= txtPassword.Text;
+            rta = await UsuariosApiClient.AuthenticateAsync(buffer);
 
-            if (await UsuariosApiClient.AuthenticateAsync(usuario.Username, usuario.Password))
+            if ( rta != null)
             {
                 MessageBox.Show("Logueo exitoso");
                 form_main frmMain = new form_main();
-                frmMain.usuarioActual = usuario;
+                frmMain.usuarioActual = rta;
                 this.Hide();
                 frmMain.ShowDialog();
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Nombre de usuario o contraseña incorrectos");
             }
         }
 
@@ -59,7 +66,7 @@ namespace form_main
             {
                 MessageBox.Show("No hay un Usuario Maestro cargado en la base de datos, ahora sera redirigido para crear un nuevo usuario","Usuario Maestro Faltante",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 frmPersona per = new frmPersona();
-                per.firstTimeBoot = true;
+                per.tipoPersona = 3;
                 per.ShowDialog();
             }
         }

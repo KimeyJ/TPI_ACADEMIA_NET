@@ -15,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
     //options => options.UseSqlServer(@"Server=.\SQLEXPRESS; Database=Academia; Integrated Security=True; TrustServerCertificate=True")));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAuthentication("Basic").AddScheme<AuthenticationSchemeOptions, AuthenticationHandler>("Basic", null);
+//builder.Services.AddAuthentication("Basic").AddScheme<AuthenticationSchemeOptions, AuthenticationHandler>("Basic", null);
 builder.Services.AddAuthorization(options =>
 {
     options.DefaultPolicy = new AuthorizationPolicyBuilder("Basic").RequireAuthenticatedUser().Build();
@@ -92,11 +92,11 @@ app.MapGet("/personas/{id}", (int id) =>
 .WithName("Getpersonas")
 .WithOpenApi();
 
-app.MapGet("/personas", () =>
+app.MapGet("/personas/consulta/{tp}", (int tp) =>
 {
     PersonaService personaService = new PersonaService();
 
-    return personaService.GetAll();
+    return personaService.GetAll(tp);
 })
 .WithName("GetAllPersonas")
 .WithOpenApi();
@@ -182,13 +182,22 @@ app.MapGet("/usuarios/count", () =>
 .WithName("CountUsuarios")
 .WithOpenApi();
 
-app.MapGet("/usuarios/login/{us}/{ps}", (string us, string ps) =>
+app.MapPost("/usuarios/login/", (Usuario usuario) =>
 {
     UsuarioService usuarioService = new UsuarioService();
 
-    return usuarioService.Authenticate(us, ps);
+    return usuarioService.Authenticate(usuario.Username, usuario.Password);
 })
 .WithName("AuthenticateUsuarios")
+.WithOpenApi();
+
+app.MapGet("/usuarios/check/{usr}/{id}", (string usr, int id) =>
+{
+    UsuarioService usuarioService = new UsuarioService();
+
+    return usuarioService.CheckDuplicate(usr, id);
+})
+.WithName("CheckUserNames")
 .WithOpenApi();
 
 app.Run();

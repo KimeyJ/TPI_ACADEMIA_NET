@@ -49,14 +49,30 @@ namespace Domain.Services
             }
         }
 
-        public bool Authenticate(string user, string pass)
+        public Usuario Authenticate(string user, string pass)
         {
             using(var _context = new AcademiaContext())
             {
                 Usuario rta = _context.Usuarios.Single(u=> u.Username == user && u.Password == pass);
+                return rta;
+            }
+        }
+
+        public bool CheckDuplicate(string user, int id)
+        {
+            using (var _context = new AcademiaContext())
+            {
+                Usuario rta = _context.Usuarios.Single(u => u.Username == user);
                 if(rta != null)
                 {
-                    return true;
+                    if(rta.Id == id)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
                 }
                 else
                 {
@@ -76,10 +92,9 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                Usuario? UsuarioToUpdate = _context.Usuarios.Find(Usuario.Id);
+                Usuario? UsuarioToUpdate = _context.Usuarios.Find(Usuario.Id, Usuario.IdPersona);
                 if (UsuarioToUpdate != null)
                 {
-                    UsuarioToUpdate.IdPersona = Usuario.IdPersona;
                     UsuarioToUpdate.Username = Usuario.Username;
                     UsuarioToUpdate.Password = Usuario.Password;
                     _context.SaveChanges();

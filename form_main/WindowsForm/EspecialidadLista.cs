@@ -84,5 +84,10 @@ namespace WindowsForms
 
             return especialidad;
         }
+
+        private void clientesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

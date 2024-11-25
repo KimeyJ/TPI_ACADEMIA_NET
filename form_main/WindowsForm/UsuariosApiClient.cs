@@ -70,15 +70,26 @@ namespace form_main.WindowsForm
             response.EnsureSuccessStatusCode();
         }
 
-        public static async Task<bool> AuthenticateAsync(string us, string ps)
+        public static async Task<Usuario> AuthenticateAsync(Usuario usuario)
         {
-            bool rta = false;
-            HttpResponseMessage response = await client.GetAsync("usuarios/login/" + us +"/"+ ps);
+            Usuario rta = new Usuario();
+            HttpResponseMessage response = await client.PostAsJsonAsync("usuarios/login", usuario);
             if (response.IsSuccessStatusCode)
             {
-                rta = await response.Content.ReadAsAsync<bool>();
+                rta = await response.Content.ReadAsAsync<Usuario>();
             }
+            else { rta = null; }
             return rta;
+        }
+
+        public static async Task<bool> CheckDuplicateAsync(string usr, int id)
+        {
+            HttpResponseMessage response = await client.GetAsync("usuarios/check/" + usr + "/" + id);
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<bool>();
+            }
+            return true;
         }
     }
 
