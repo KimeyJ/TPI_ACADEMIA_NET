@@ -235,3 +235,9 @@ C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\WebAPI\bin\Deb
 C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

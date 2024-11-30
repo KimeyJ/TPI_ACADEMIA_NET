@@ -11,6 +11,8 @@ namespace Domain.Model
     {
         public int Id { get; set; }
         [Required]
+        public int IdEsp { get; set; }
+        [Required]
         public int Año { get; set; }
         public string Descripcion { get; set; }
     }

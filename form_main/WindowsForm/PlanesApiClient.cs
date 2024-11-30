@@ -20,28 +20,28 @@ namespace WindowsForm
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public static async Task<Especialidad> GetAsync(int id)
+        public static async Task<Plan> GetAsync(int id)
         {
-            Especialidad plan = null;
+            Plan plan = null;
             HttpResponseMessage response = await client.GetAsync("planes/"+id);
             if (response.IsSuccessStatusCode)
             {
-                plan = await response.Content.ReadAsAsync<Especialidad>();
+                plan = await response.Content.ReadAsAsync<Plan>();
             }
             return plan;
         }
 
-        public static async Task<IEnumerable<Especialidad>> GetAllAsync()
+        public static async Task<IEnumerable<Plan>> GetAllAsync(int id)
         {
-            IEnumerable<Especialidad> planes = null;
-            HttpResponseMessage response = await client.GetAsync("planes");
+            IEnumerable<Plan> planes = null;
+            HttpResponseMessage response = await client.GetAsync("planes/all/"+id);
             if (response.IsSuccessStatusCode)
             {
-                planes = await response.Content.ReadAsAsync<IEnumerable<Especialidad>>();
+                planes = await response.Content.ReadAsAsync<IEnumerable<Plan>>();
             }
             return planes;
         }
-        public async static Task AddAsync(Especialidad plan)
+        public async static Task AddAsync(Plan plan)
         {
             HttpResponseMessage response = await client.PostAsJsonAsync("planes", plan);
             response.EnsureSuccessStatusCode();
@@ -53,7 +53,7 @@ namespace WindowsForm
             response.EnsureSuccessStatusCode();
         }
 
-        public static async Task UpdateAsync(Especialidad plan)
+        public static async Task UpdateAsync(Plan plan)
         {
             HttpResponseMessage response = await client.PutAsJsonAsync("planes", plan);
             response.EnsureSuccessStatusCode();

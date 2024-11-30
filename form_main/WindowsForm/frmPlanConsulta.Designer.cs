@@ -29,104 +29,119 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            dataGridView1 = new DataGridView();
             planesApiClientBindingSource = new BindingSource(components);
             btnAgregar = new Button();
             btnModificar = new Button();
             btnEliminar = new Button();
-            comboBox1 = new ComboBox();
+            cmbEspecialidad = new ComboBox();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)planesApiClientBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.DataSource = planesApiClientBindingSource;
-            dataGridView1.Location = new Point(128, 101);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(425, 188);
-            dataGridView1.TabIndex = 0;
-            // 
-            // planesApiClientBindingSource
-            // 
-            planesApiClientBindingSource.DataSource = typeof(WindowsForm.PlanesApiClient);
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(247, 368);
+            btnAgregar.AutoSize = true;
+            btnAgregar.Location = new Point(12, 232);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.Size = new Size(82, 25);
             btnAgregar.TabIndex = 1;
-            btnAgregar.Text = "button1";
+            btnAgregar.Text = "Nuevo Plan";
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(402, 366);
+            btnModificar.AutoSize = true;
+            btnModificar.Enabled = false;
+            btnModificar.Location = new Point(113, 232);
+            btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(94, 29);
+            btnModificar.Size = new Size(100, 25);
             btnModificar.TabIndex = 2;
-            btnModificar.Text = "button2";
+            btnModificar.Text = "Modificar Plan";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(595, 363);
+            btnEliminar.AutoSize = true;
+            btnEliminar.Enabled = false;
+            btnEliminar.Location = new Point(235, 232);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(86, 25);
             btnEliminar.TabIndex = 3;
-            btnEliminar.Text = "button3";
+            btnEliminar.Text = "Eliminar Plan";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // comboBox1
+            // cmbEspecialidad
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(579, 27);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 4;
+            cmbEspecialidad.FormattingEnabled = true;
+            cmbEspecialidad.Location = new Point(365, 20);
+            cmbEspecialidad.Margin = new Padding(3, 2, 3, 2);
+            cmbEspecialidad.Name = "cmbEspecialidad";
+            cmbEspecialidad.Size = new Size(133, 23);
+            cmbEspecialidad.TabIndex = 4;
+            cmbEspecialidad.SelectedIndexChanged += cmbEspecialidad_SelectedIndexChanged;
+            cmbEspecialidad.SelectionChangeCommitted += cmbEspecialidad_SelectionChangeCommitted;
+            cmbEspecialidad.TextUpdate += cmbEspecialidad_TextUpdate;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(436, 21);
+            label1.Location = new Point(287, 23);
             label1.Name = "label1";
-            label1.Size = new Size(93, 20);
+            label1.Size = new Size(72, 15);
             label1.TabIndex = 5;
             label1.Text = "Especialidad";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 60);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(575, 150);
+            dataGridView1.TabIndex = 6;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.RowHeaderMouseClick += dataGridView1_RowHeaderMouseClick;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            dataGridView1.CursorChanged += dataGridView1_CursorChanged;
+            // 
             // frmPlanConsulta
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(599, 275);
+            Controls.Add(dataGridView1);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbEspecialidad);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
-            Controls.Add(dataGridView1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmPlanConsulta";
             Text = "frmPlanConsulta";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += frmPlanConsulta_Load;
             ((System.ComponentModel.ISupportInitialize)planesApiClientBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
         private BindingSource planesApiClientBindingSource;
         private Button btnAgregar;
         private Button btnModificar;
         private Button btnEliminar;
-        private ComboBox comboBox1;
+        private ComboBox cmbEspecialidad;
         private Label label1;
+        private DataGridView dataGridView1;
     }
 }

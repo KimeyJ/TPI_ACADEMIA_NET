@@ -94,5 +94,12 @@ namespace form_main
             nuevaConsulta.MdiParent = this;
             nuevaConsulta.Show();
         }
+
+        private void tsddPlan_Click(object sender, EventArgs e)
+        {
+            frmPlanConsulta nuevaConsulta = new frmPlanConsulta();
+            nuevaConsulta.MdiParent = this;
+            nuevaConsulta.Show();
+        }
     }
 }

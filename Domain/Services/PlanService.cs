@@ -41,11 +41,20 @@ namespace Domain.Services
 
         }
 
-        public IEnumerable<Plan> GetAll()
+        public IEnumerable<Plan> GetAll(int id)
         {
             using (var _context = new AcademiaContext())
             {
-                return _context.Planes.ToList();
+                var rta = _context.Planes.ToList();
+                if (id == 0)
+                {
+                    return rta;
+                }
+                else
+                {
+                    return (from p in rta where p.IdEsp == id select p);
+                }
+                
             }
         }
         public void Update(Plan Plan)
