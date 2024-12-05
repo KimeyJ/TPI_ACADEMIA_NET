@@ -19,10 +19,10 @@ namespace form_main.WindowsForm
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public static async Task<Materia> GetAsync(int id)
+        public static async Task<Materia> GetAsync(int id, int id_p)
         {
             Materia materia = null;
-            HttpResponseMessage response = await client.GetAsync("materias/" + id);
+            HttpResponseMessage response = await client.GetAsync("materias/" + id+ "/"+id_p);
             if (response.IsSuccessStatusCode)
             {
                 materia = await response.Content.ReadAsAsync<Materia>();
@@ -30,10 +30,10 @@ namespace form_main.WindowsForm
             return materia;
         }
 
-        public static async Task<IEnumerable<Materia>> GetAllAsync()
+        public static async Task<IEnumerable<Materia>> GetAllAsync(int p_id)
         {
             IEnumerable<Materia> materias = null;
-            HttpResponseMessage response = await client.GetAsync("materias");
+            HttpResponseMessage response = await client.GetAsync("materias/plan/" + p_id);
             if (response.IsSuccessStatusCode)
             {
                 materias = await response.Content.ReadAsAsync<IEnumerable<Materia>>();
@@ -46,9 +46,9 @@ namespace form_main.WindowsForm
             response.EnsureSuccessStatusCode();
         }
 
-        public static async Task DeleteAsync(int id)
+        public static async Task DeleteAsync(int id, int id_p)
         {
-            HttpResponseMessage response = await client.DeleteAsync("materias/" + id);
+            HttpResponseMessage response = await client.DeleteAsync("materias/" + id +"/" + id_p);
             response.EnsureSuccessStatusCode();
         }
 

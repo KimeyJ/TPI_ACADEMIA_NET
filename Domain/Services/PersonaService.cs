@@ -47,15 +47,15 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                return _context.Personas.ToList();
-                /*if (tipoPersona == 0)
+                var rta = _context.Personas.ToList();
+                if (tipoPersona == 0)
                 {
-                    return _context.Personas.ToList();
+                    return rta;
                 }
                 else
                 {
-                    return _context.Personas.Where(u => u.Tipo_persona == tipoPersona);
-                }¨*/
+                    return from p in rta where p.Tipo_persona == tipoPersona select p;
+                }
                 
             }
         }

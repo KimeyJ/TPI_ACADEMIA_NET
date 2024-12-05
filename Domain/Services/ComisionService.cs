@@ -41,11 +41,19 @@ namespace Domain.Services
 
         }
 
-        public IEnumerable<Comision> GetAll()
+        public IEnumerable<Comision> GetAll(int id)
         {
             using (var _context = new AcademiaContext())
             {
-                return _context.Comisiones.ToList();
+                var rta =  _context.Comisiones.ToList();
+                if(id == 0)
+                {
+                    return rta;
+                }
+                else
+                {
+                    return from c in rta where c.PlanId == id select c;
+                }
             }
         }
         public void Update(Comision Comision)

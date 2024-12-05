@@ -33,7 +33,9 @@ namespace form_main
 
         private void materiasDelPlanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmConsultaMateria nuevaConsulta = new frmConsultaMateria();
+            nuevaConsulta.MdiParent = this;
+            nuevaConsulta.Show();
         }
 
         private void moficarDatosPersonalesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,6 +98,10 @@ namespace form_main
         }
 
         private void tsddPlan_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void planesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmPlanConsulta nuevaConsulta = new frmPlanConsulta();
             nuevaConsulta.MdiParent = this;

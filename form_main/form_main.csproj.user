@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="WindowsForm\frmComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="WindowsForm\frmConsultaComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="WindowsForm\frmConsultaMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="WindowsForm\frmConsultaPersona.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -29,9 +38,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="WindowsForm\frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="WindowsForm\frmAltaMateria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="WindowsForm\frmPersona.cs">

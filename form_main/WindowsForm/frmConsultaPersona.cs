@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,23 +24,43 @@ namespace form_main.WindowsForm
         {
             PersonasApiClient client = new PersonasApiClient();
 
-            this.personasDataGridView.DataSource = null;
-            this.personasDataGridView.DataSource = await PersonasApiClient.GetAllAsync(tipoPersona);
+            this.dataGridView1.DataSource = null;
+            this.dataGridView1.DataSource = await PersonasApiClient.GetAllAsync(tipoPersona);
 
-            if (this.personasDataGridView.Rows.Count == 0)
+            if (this.dataGridView1.Rows.Count == 0)
             {
                 this.btnEliminar.Enabled = false;
                 this.btnModifcar.Enabled = false;
             }
             else
             {
-                this.personasDataGridView.Rows[0].Selected = true;
+                this.dataGridView1.Rows[0].Selected = true;
             }
         }
 
-        private void frmConsultaPersona_Load(object sender, EventArgs e)
+        private async void frmConsultaPersona_Load(object sender, EventArgs e)
         {
             GetAllAndLoad();
+        }
+
+        private void personasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnModifcar_Click(object sender, EventArgs e)
+        {
+            frmPersona modPersona = new frmPersona();
+            modPersona.MdiParent = form_main.ActiveForm;
+            modPersona.editMode = true;
+            modPersona.persona = (Persona)dataGridView1.SelectedRows[0].DataBoundItem;
+            modPersona.Show();
+        }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            PersonasApiClient client = new PersonasApiClient();
+            await PersonasApiClient.DeleteAsync(((Persona)dataGridView1.SelectedRows[0].DataBoundItem).Legajo);
         }
     }
 }

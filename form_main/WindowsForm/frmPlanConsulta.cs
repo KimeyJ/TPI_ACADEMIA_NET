@@ -30,7 +30,6 @@ namespace form_main.WindowsForm
             }
             else
             {
-                MessageBox.Show(current_esp_id.ToString());
                 frmPlan nuevoPlan = new frmPlan();
                 nuevoPlan.MdiParent = this.MdiParent;
                 nuevoPlan.buffer.IdEsp = current_esp_id;
@@ -58,6 +57,11 @@ namespace form_main.WindowsForm
             this.dataGridView1.DataSource = null;
             this.dataGridView1.DataSource = await PlanesApiClient.GetAllAsync(esp);
             current_esp_id = esp;
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
         }
 
         private void cmbEspecialidad_SelectionChangeCommitted(object sender, EventArgs e)
@@ -72,7 +76,6 @@ namespace form_main.WindowsForm
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(current_esp_id.ToString());
             frmPlan modPlan = new frmPlan();
             modPlan.MdiParent = this.MdiParent;
             modPlan.editMode = true;
@@ -88,14 +91,11 @@ namespace form_main.WindowsForm
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
+
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
         }
 
         private void dataGridView1_CursorChanged(object sender, EventArgs e)
@@ -104,7 +104,23 @@ namespace form_main.WindowsForm
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmConsultaMateria materias = new frmConsultaMateria();
+            materias.MdiParent = this.MdiParent;
+            materias.idPlan = ((Plan)dataGridView1.SelectedRows[0].DataBoundItem).Id;
+            materias.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmConsultaComision comisiones = new frmConsultaComision();
+            comisiones.MdiParent = this.MdiParent;
+            comisiones.idPlan = ((Plan)dataGridView1.SelectedRows[0].DataBoundItem).Id;
+            comisiones.Show();
         }
     }
 }

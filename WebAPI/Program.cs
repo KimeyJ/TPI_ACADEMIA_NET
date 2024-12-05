@@ -245,5 +245,94 @@ app.MapDelete("/planes/{id}", (int id) =>
 .WithName("DeletePlan")
 .WithOpenApi();
 
+app.MapGet("/materias/{id}/{id_p}", (int id, int id_p) =>
+{
+    MateriaService materiaService = new MateriaService();
+
+    return materiaService.Get(id, id_p);
+})
+.WithName("GetMaterias")
+.WithOpenApi();
+
+app.MapGet("/materias/plan/{p_id}", (int p_id) =>
+{
+    MateriaService materiaService = new MateriaService();
+
+    return materiaService.GetAll(p_id);
+})
+.WithName("GetAllMaterias")
+.WithOpenApi();
+
+app.MapPost("/materias", (Materia materia) =>
+{
+    MateriaService materiaService = new MateriaService();
+
+    materiaService.Add(materia);
+})
+.WithName("AddMateria")
+.WithOpenApi();
+
+app.MapPut("/materias", (Materia materia) =>
+{
+    MateriaService materiaService = new MateriaService();
+
+    materiaService.Update(materia);
+})
+.WithName("UpdateMateria")
+.WithOpenApi();
+
+app.MapDelete("/materias/{id_m}/{id_p}", (int id_m, int id_p) =>
+{
+    MateriaService materiaService = new MateriaService();
+
+    materiaService.Delete(id_m, id_p);
+})
+.WithName("DeleteMateria")
+.WithOpenApi();
+
+app.MapGet("/comisiones/{id}", (int id) =>
+{
+    ComisionService comisionService = new ComisionService();
+
+    return comisionService.Get(id);
+})
+.WithName("GetComisiones")
+.WithOpenApi();
+
+app.MapGet("/comisiones/plan/{id}", (int id) =>
+{
+    ComisionService comisionService = new ComisionService();
+
+    return comisionService.GetAll(id);
+})
+.WithName("GetAllComisiones")
+.WithOpenApi();
+
+app.MapPost("/comisiones", (Comision comision) =>
+{
+    ComisionService comisionService = new ComisionService();
+
+    comisionService.Add(comision);
+})
+.WithName("AddComision")
+.WithOpenApi();
+
+app.MapPut("/comisiones", (Comision comision) =>
+{
+    ComisionService comisionService = new ComisionService();
+
+    comisionService.Update(comision);
+})
+.WithName("UpdateComision")
+.WithOpenApi();
+
+app.MapDelete("/comisiones/{id}", (int id) =>
+{
+    ComisionService comisionService = new ComisionService();
+
+    comisionService.Delete(id);
+})
+.WithName("DeleteComision")
+.WithOpenApi();
 
 app.Run();

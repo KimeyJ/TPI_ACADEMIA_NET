@@ -20,11 +20,11 @@ namespace Domain.Services
 
         }
 
-        public void Delete(int id)
+        public void Delete(int id, int id_p)
         {
             using (var _context = new AcademiaContext())
             {
-                Materia? MateriaToDelete = _context.Materias.Find(id);
+                Materia? MateriaToDelete = _context.Materias.Find(id, id_p);
                 if (MateriaToDelete != null)
                 {
                     _context.Materias.Remove(MateriaToDelete);
@@ -32,27 +32,35 @@ namespace Domain.Services
                 }
             }
         }
-        public Materia? Get(int id)
+        public Materia? Get(int id, int id_p)
         {
             using (var _context = new AcademiaContext())
             {
-                return _context.Materias.Find(id);
+                return _context.Materias.Find(id, id_p);
             }
 
         }
 
-        public IEnumerable<Materia> GetAll()
+        public IEnumerable<Materia> GetAll(int p_id)
         {
             using (var _context = new AcademiaContext())
             {
-                return _context.Materias.ToList();
+                var rta = _context.Materias.ToList();
+                if (p_id == 0)
+                {
+                    return rta;
+                }
+                else
+                {
+                    return from m in rta where m.IdPlan == p_id select m;
+                }
             }
         }
         public void Update(Materia Materia)
         {
             using (var _context = new AcademiaContext())
             {
-                Materia? MateriaToUpdate = _context.Materias.Find(Materia.Id);
+                Materia? MateriaToUpdate = _context.Materias.Find(Materia.Id, Materia.IdPlan);
                 if (MateriaToUpdate != null)
                 {
                     MateriaToUpdate.Descripcion = Materia.Descripcion;

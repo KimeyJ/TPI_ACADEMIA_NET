@@ -29,30 +29,24 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            personasDataGridView = new DataGridView();
+            personasApiClientBindingSource = new BindingSource(components);
             btnFilter = new Button();
             btnModifcar = new Button();
             btnEliminar = new Button();
-            personasApiClientBindingSource = new BindingSource(components);
-            ((System.ComponentModel.ISupportInitialize)personasDataGridView).BeginInit();
+            dataGridView1 = new DataGridView();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)personasApiClientBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // personasDataGridView
+            // personasApiClientBindingSource
             // 
-            personasDataGridView.AutoGenerateColumns = false;
-            personasDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            personasDataGridView.DataSource = personasApiClientBindingSource;
-            personasDataGridView.Location = new Point(12, 12);
-            personasDataGridView.Name = "personasDataGridView";
-            personasDataGridView.RowHeadersWidth = 51;
-            personasDataGridView.Size = new Size(776, 324);
-            personasDataGridView.TabIndex = 0;
+            personasApiClientBindingSource.DataSource = typeof(PersonasApiClient);
             // 
             // btnFilter
             // 
             btnFilter.AutoSize = true;
-            btnFilter.Location = new Point(452, 393);
+            btnFilter.Location = new Point(373, 393);
             btnFilter.Name = "btnFilter";
             btnFilter.Size = new Size(133, 30);
             btnFilter.TabIndex = 1;
@@ -67,6 +61,7 @@
             btnModifcar.TabIndex = 2;
             btnModifcar.Text = "Modificar";
             btnModifcar.UseVisualStyleBackColor = true;
+            btnModifcar.Click += btnModifcar_Click;
             // 
             // btnEliminar
             // 
@@ -76,35 +71,56 @@
             btnEliminar.TabIndex = 3;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // personasApiClientBindingSource
+            // dataGridView1
             // 
-            personasApiClientBindingSource.DataSource = typeof(PersonasApiClient);
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(773, 345);
+            dataGridView1.TabIndex = 4;
+            // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button1.Location = new Point(512, 393);
+            button1.Name = "button1";
+            button1.Size = new Size(73, 30);
+            button1.TabIndex = 5;
+            button1.Text = "Agregar";
+            button1.UseVisualStyleBackColor = true;
             // 
             // frmConsultaPersona
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
+            Controls.Add(dataGridView1);
             Controls.Add(btnEliminar);
             Controls.Add(btnModifcar);
             Controls.Add(btnFilter);
-            Controls.Add(personasDataGridView);
             Name = "frmConsultaPersona";
             Text = "frmConsultaPersona";
             Load += frmConsultaPersona_Load;
-            ((System.ComponentModel.ISupportInitialize)personasDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)personasApiClientBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private DataGridView personasDataGridView;
         private Button btnFilter;
         private Button btnModifcar;
         private Button btnEliminar;
         private BindingSource personasApiClientBindingSource;
+        private DataGridView dataGridView1;
+        private Button button1;
     }
 }
