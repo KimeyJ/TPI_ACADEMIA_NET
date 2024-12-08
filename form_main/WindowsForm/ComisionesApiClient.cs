@@ -34,7 +34,7 @@ namespace WindowsForm
         public static async Task<IEnumerable<Comision>> GetAllAsync(int id)
         {
             IEnumerable<Comision> comisiones = null;
-            HttpResponseMessage response = await client.GetAsync("comisiones/"+id);
+            HttpResponseMessage response = await client.GetAsync("comisiones/plan/"+id);
             if (response.IsSuccessStatusCode)
             {
                 comisiones = await response.Content.ReadAsAsync<IEnumerable<Comision>>();

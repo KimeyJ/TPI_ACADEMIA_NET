@@ -30,60 +30,48 @@
         {
             components = new System.ComponentModel.Container();
             planesApiClientBindingSource = new BindingSource(components);
-            btnAgregar = new Button();
-            btnModificar = new Button();
-            btnEliminar = new Button();
             cmbEspecialidad = new ComboBox();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
+            planesDataGridView = new DataGridView();
+            materiasDataGridView = new DataGridView();
+            menuStrip1 = new MenuStrip();
+            planesToolStripMenuItem = new ToolStripMenuItem();
+            crearUnPlanToolStripMenuItem = new ToolStripMenuItem();
+            modificarUnPlanToolStripMenuItem = new ToolStripMenuItem();
+            eliminarPlanToolStripMenuItem = new ToolStripMenuItem();
+            materiasToolStripMenuItem = new ToolStripMenuItem();
+            crearUnaMateriaToolStripMenuItem = new ToolStripMenuItem();
+            modifcarMateriaToolStripMenuItem = new ToolStripMenuItem();
+            eliminarMateriaSeleccionadaToolStripMenuItem = new ToolStripMenuItem();
+            comisionesToolStripMenuItem = new ToolStripMenuItem();
+            crearComisionToolStripMenuItem = new ToolStripMenuItem();
+            modificarComisionToolStripMenuItem = new ToolStripMenuItem();
+            eliminarComisionToolStripMenuItem = new ToolStripMenuItem();
+            cursosToolStripMenuItem = new ToolStripMenuItem();
+            nuevoCursoToolStripMenuItem = new ToolStripMenuItem();
+            modificarCursoToolStripMenuItem = new ToolStripMenuItem();
+            eliminarCursoToolStripMenuItem = new ToolStripMenuItem();
+            lblPlanes = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            cursosDataGridView = new DataGridView();
+            label4 = new Label();
+            comisionesDataGridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)planesApiClientBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)planesDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)materiasDataGridView).BeginInit();
+            menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cursosDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)comisionesDataGridView).BeginInit();
             SuspendLayout();
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.AutoSize = true;
-            btnAgregar.Enabled = false;
-            btnAgregar.Location = new Point(14, 309);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 33);
-            btnAgregar.TabIndex = 1;
-            btnAgregar.Text = "Nuevo Plan";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
-            // 
-            // btnModificar
-            // 
-            btnModificar.AutoSize = true;
-            btnModificar.Enabled = false;
-            btnModificar.Location = new Point(129, 309);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(115, 33);
-            btnModificar.TabIndex = 2;
-            btnModificar.Text = "Modificar Plan";
-            btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.AutoSize = true;
-            btnEliminar.Enabled = false;
-            btnEliminar.Location = new Point(269, 309);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(105, 33);
-            btnEliminar.TabIndex = 3;
-            btnEliminar.Text = "Eliminar Plan";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // cmbEspecialidad
             // 
             cmbEspecialidad.FormattingEnabled = true;
-            cmbEspecialidad.Location = new Point(427, 28);
+            cmbEspecialidad.Location = new Point(374, 21);
+            cmbEspecialidad.Margin = new Padding(3, 2, 3, 2);
             cmbEspecialidad.Name = "cmbEspecialidad";
-            cmbEspecialidad.Size = new Size(151, 28);
+            cmbEspecialidad.Size = new Size(133, 23);
             cmbEspecialidad.TabIndex = 4;
             cmbEspecialidad.SelectedIndexChanged += cmbEspecialidad_SelectedIndexChanged;
             cmbEspecialidad.SelectionChangeCommitted += cmbEspecialidad_SelectionChangeCommitted;
@@ -92,85 +80,286 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(328, 31);
+            label1.Location = new Point(287, 23);
             label1.Name = "label1";
-            label1.Size = new Size(93, 20);
+            label1.Size = new Size(72, 15);
             label1.TabIndex = 5;
             label1.Text = "Especialidad";
             // 
-            // dataGridView1
+            // planesDataGridView
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 80);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(657, 200);
-            dataGridView1.TabIndex = 6;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            dataGridView1.RowHeaderMouseClick += dataGridView1_RowHeaderMouseClick;
-            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
-            dataGridView1.CursorChanged += dataGridView1_CursorChanged;
+            planesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            planesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            planesDataGridView.Location = new Point(12, 79);
+            planesDataGridView.MultiSelect = false;
+            planesDataGridView.Name = "planesDataGridView";
+            planesDataGridView.ReadOnly = true;
+            planesDataGridView.RowHeadersWidth = 51;
+            planesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            planesDataGridView.Size = new Size(313, 326);
+            planesDataGridView.TabIndex = 6;
+            planesDataGridView.CellClick += planesDataGridView_CellClick;
+            planesDataGridView.CellContentClick += dataGridView1_CellContentClick;
+            planesDataGridView.RowHeaderMouseClick += dataGridView1_RowHeaderMouseClick;
+            planesDataGridView.SelectionChanged += dataGridView1_SelectionChanged;
+            planesDataGridView.CursorChanged += dataGridView1_CursorChanged;
             // 
-            // button1
+            // materiasDataGridView
             // 
-            button1.AutoSize = true;
-            button1.Enabled = false;
-            button1.Location = new Point(394, 310);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 30);
-            button1.TabIndex = 7;
-            button1.Text = "Ver Materias";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            materiasDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            materiasDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            materiasDataGridView.Location = new Point(351, 255);
+            materiasDataGridView.MultiSelect = false;
+            materiasDataGridView.Name = "materiasDataGridView";
+            materiasDataGridView.ReadOnly = true;
+            materiasDataGridView.RowHeadersWidth = 51;
+            materiasDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            materiasDataGridView.Size = new Size(327, 150);
+            materiasDataGridView.TabIndex = 10;
             // 
-            // button2
+            // menuStrip1
             // 
-            button2.AutoSize = true;
-            button2.Enabled = false;
-            button2.Location = new Point(518, 310);
-            button2.Name = "button2";
-            button2.Size = new Size(120, 30);
-            button2.TabIndex = 8;
-            button2.Text = "Ver Comisiones";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { planesToolStripMenuItem, materiasToolStripMenuItem, comisionesToolStripMenuItem, cursosToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1055, 24);
+            menuStrip1.TabIndex = 12;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // planesToolStripMenuItem
+            // 
+            planesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearUnPlanToolStripMenuItem, modificarUnPlanToolStripMenuItem, eliminarPlanToolStripMenuItem });
+            planesToolStripMenuItem.Name = "planesToolStripMenuItem";
+            planesToolStripMenuItem.Size = new Size(53, 20);
+            planesToolStripMenuItem.Text = "Planes";
+            // 
+            // crearUnPlanToolStripMenuItem
+            // 
+            crearUnPlanToolStripMenuItem.Name = "crearUnPlanToolStripMenuItem";
+            crearUnPlanToolStripMenuItem.Size = new Size(168, 22);
+            crearUnPlanToolStripMenuItem.Text = "Crear un Plan";
+            crearUnPlanToolStripMenuItem.Click += crearUnPlanToolStripMenuItem_Click;
+            // 
+            // modificarUnPlanToolStripMenuItem
+            // 
+            modificarUnPlanToolStripMenuItem.Name = "modificarUnPlanToolStripMenuItem";
+            modificarUnPlanToolStripMenuItem.Size = new Size(168, 22);
+            modificarUnPlanToolStripMenuItem.Text = "Modificar un Plan";
+            modificarUnPlanToolStripMenuItem.Click += modificarUnPlanToolStripMenuItem_Click;
+            // 
+            // eliminarPlanToolStripMenuItem
+            // 
+            eliminarPlanToolStripMenuItem.Name = "eliminarPlanToolStripMenuItem";
+            eliminarPlanToolStripMenuItem.Size = new Size(168, 22);
+            eliminarPlanToolStripMenuItem.Text = "Eliminar Plan";
+            eliminarPlanToolStripMenuItem.Click += eliminarPlanToolStripMenuItem_Click;
+            // 
+            // materiasToolStripMenuItem
+            // 
+            materiasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearUnaMateriaToolStripMenuItem, modifcarMateriaToolStripMenuItem, eliminarMateriaSeleccionadaToolStripMenuItem });
+            materiasToolStripMenuItem.Enabled = false;
+            materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
+            materiasToolStripMenuItem.Size = new Size(64, 20);
+            materiasToolStripMenuItem.Text = "Materias";
+            // 
+            // crearUnaMateriaToolStripMenuItem
+            // 
+            crearUnaMateriaToolStripMenuItem.Name = "crearUnaMateriaToolStripMenuItem";
+            crearUnaMateriaToolStripMenuItem.Size = new Size(168, 22);
+            crearUnaMateriaToolStripMenuItem.Text = "Crear una Materia";
+            crearUnaMateriaToolStripMenuItem.Click += crearUnaMateriaToolStripMenuItem_Click;
+            // 
+            // modifcarMateriaToolStripMenuItem
+            // 
+            modifcarMateriaToolStripMenuItem.Name = "modifcarMateriaToolStripMenuItem";
+            modifcarMateriaToolStripMenuItem.Size = new Size(168, 22);
+            modifcarMateriaToolStripMenuItem.Text = "Modifcar Materia";
+            modifcarMateriaToolStripMenuItem.Click += modifcarMateriaToolStripMenuItem_Click;
+            // 
+            // eliminarMateriaSeleccionadaToolStripMenuItem
+            // 
+            eliminarMateriaSeleccionadaToolStripMenuItem.Name = "eliminarMateriaSeleccionadaToolStripMenuItem";
+            eliminarMateriaSeleccionadaToolStripMenuItem.Size = new Size(168, 22);
+            eliminarMateriaSeleccionadaToolStripMenuItem.Text = "Eliminar Materia";
+            eliminarMateriaSeleccionadaToolStripMenuItem.Click += eliminarMateriaSeleccionadaToolStripMenuItem_Click;
+            // 
+            // comisionesToolStripMenuItem
+            // 
+            comisionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearComisionToolStripMenuItem, modificarComisionToolStripMenuItem, eliminarComisionToolStripMenuItem });
+            comisionesToolStripMenuItem.Enabled = false;
+            comisionesToolStripMenuItem.Name = "comisionesToolStripMenuItem";
+            comisionesToolStripMenuItem.Size = new Size(81, 20);
+            comisionesToolStripMenuItem.Text = "Comisiones";
+            // 
+            // crearComisionToolStripMenuItem
+            // 
+            crearComisionToolStripMenuItem.Name = "crearComisionToolStripMenuItem";
+            crearComisionToolStripMenuItem.Size = new Size(179, 22);
+            crearComisionToolStripMenuItem.Text = "Crear Comision";
+            crearComisionToolStripMenuItem.Click += crearComisionToolStripMenuItem_Click;
+            // 
+            // modificarComisionToolStripMenuItem
+            // 
+            modificarComisionToolStripMenuItem.Name = "modificarComisionToolStripMenuItem";
+            modificarComisionToolStripMenuItem.Size = new Size(179, 22);
+            modificarComisionToolStripMenuItem.Text = "Modificar Comision";
+            modificarComisionToolStripMenuItem.Click += modificarComisionToolStripMenuItem_Click;
+            // 
+            // eliminarComisionToolStripMenuItem
+            // 
+            eliminarComisionToolStripMenuItem.Name = "eliminarComisionToolStripMenuItem";
+            eliminarComisionToolStripMenuItem.Size = new Size(179, 22);
+            eliminarComisionToolStripMenuItem.Text = "Eliminar Comision";
+            eliminarComisionToolStripMenuItem.Click += eliminarComisionToolStripMenuItem_Click;
+            // 
+            // cursosToolStripMenuItem
+            // 
+            cursosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nuevoCursoToolStripMenuItem, modificarCursoToolStripMenuItem, eliminarCursoToolStripMenuItem });
+            cursosToolStripMenuItem.Enabled = false;
+            cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
+            cursosToolStripMenuItem.Size = new Size(55, 20);
+            cursosToolStripMenuItem.Text = "Cursos";
+            // 
+            // nuevoCursoToolStripMenuItem
+            // 
+            nuevoCursoToolStripMenuItem.Name = "nuevoCursoToolStripMenuItem";
+            nuevoCursoToolStripMenuItem.Size = new Size(159, 22);
+            nuevoCursoToolStripMenuItem.Text = "Nuevo Curso";
+            // 
+            // modificarCursoToolStripMenuItem
+            // 
+            modificarCursoToolStripMenuItem.Name = "modificarCursoToolStripMenuItem";
+            modificarCursoToolStripMenuItem.Size = new Size(159, 22);
+            modificarCursoToolStripMenuItem.Text = "Modificar Curso";
+            // 
+            // eliminarCursoToolStripMenuItem
+            // 
+            eliminarCursoToolStripMenuItem.Name = "eliminarCursoToolStripMenuItem";
+            eliminarCursoToolStripMenuItem.Size = new Size(159, 22);
+            eliminarCursoToolStripMenuItem.Text = "Eliminar Curso";
+            // 
+            // lblPlanes
+            // 
+            lblPlanes.AutoSize = true;
+            lblPlanes.Location = new Point(12, 61);
+            lblPlanes.Name = "lblPlanes";
+            lblPlanes.Size = new Size(41, 15);
+            lblPlanes.TabIndex = 13;
+            lblPlanes.Text = "Planes";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(351, 408);
+            label2.Name = "label2";
+            label2.Size = new Size(52, 15);
+            label2.TabIndex = 14;
+            label2.Text = "Materias";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(351, 61);
+            label3.Name = "label3";
+            label3.Size = new Size(69, 15);
+            label3.TabIndex = 15;
+            label3.Text = "Comisiones";
+            // 
+            // cursosDataGridView
+            // 
+            cursosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            cursosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            cursosDataGridView.Location = new Point(710, 79);
+            cursosDataGridView.MultiSelect = false;
+            cursosDataGridView.Name = "cursosDataGridView";
+            cursosDataGridView.ReadOnly = true;
+            cursosDataGridView.RowHeadersWidth = 51;
+            cursosDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            cursosDataGridView.Size = new Size(327, 326);
+            cursosDataGridView.TabIndex = 16;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(720, 60);
+            label4.Name = "label4";
+            label4.Size = new Size(43, 15);
+            label4.TabIndex = 17;
+            label4.Text = "Cursos";
+            // 
+            // comisionesDataGridView
+            // 
+            comisionesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            comisionesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            comisionesDataGridView.Location = new Point(351, 79);
+            comisionesDataGridView.MultiSelect = false;
+            comisionesDataGridView.Name = "comisionesDataGridView";
+            comisionesDataGridView.ReadOnly = true;
+            comisionesDataGridView.RowHeadersWidth = 51;
+            comisionesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            comisionesDataGridView.Size = new Size(327, 150);
+            comisionesDataGridView.TabIndex = 18;
             // 
             // frmPlanConsulta
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(685, 367);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1055, 434);
+            Controls.Add(comisionesDataGridView);
+            Controls.Add(label4);
+            Controls.Add(cursosDataGridView);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(lblPlanes);
+            Controls.Add(materiasDataGridView);
+            Controls.Add(planesDataGridView);
             Controls.Add(label1);
             Controls.Add(cmbEspecialidad);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnModificar);
-            Controls.Add(btnAgregar);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmPlanConsulta";
             Text = "frmPlanConsulta";
             Load += frmPlanConsulta_Load;
             ((System.ComponentModel.ISupportInitialize)planesApiClientBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)planesDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)materiasDataGridView).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cursosDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)comisionesDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private BindingSource planesApiClientBindingSource;
-        private Button btnAgregar;
-        private Button btnModificar;
-        private Button btnEliminar;
         private ComboBox cmbEspecialidad;
         private Label label1;
-        private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
+        private DataGridView planesDataGridView;
+        private DataGridView materiasDataGridView;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem planesToolStripMenuItem;
+        private ToolStripMenuItem materiasToolStripMenuItem;
+        private ToolStripMenuItem comisionesToolStripMenuItem;
+        private ToolStripMenuItem cursosToolStripMenuItem;
+        private ToolStripMenuItem crearUnPlanToolStripMenuItem;
+        private ToolStripMenuItem modificarUnPlanToolStripMenuItem;
+        private ToolStripMenuItem eliminarPlanToolStripMenuItem;
+        private ToolStripMenuItem crearUnaMateriaToolStripMenuItem;
+        private ToolStripMenuItem modifcarMateriaToolStripMenuItem;
+        private ToolStripMenuItem eliminarMateriaSeleccionadaToolStripMenuItem;
+        private ToolStripMenuItem crearComisionToolStripMenuItem;
+        private ToolStripMenuItem modificarComisionToolStripMenuItem;
+        private ToolStripMenuItem eliminarComisionToolStripMenuItem;
+        private ToolStripMenuItem nuevoCursoToolStripMenuItem;
+        private ToolStripMenuItem modificarCursoToolStripMenuItem;
+        private ToolStripMenuItem eliminarCursoToolStripMenuItem;
+        private Label lblPlanes;
+        private Label label2;
+        private Label label3;
+        private DataGridView cursosDataGridView;
+        private Label label4;
+        private DataGridView comisionesDataGridView;
     }
 }

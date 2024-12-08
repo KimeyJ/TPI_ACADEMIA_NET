@@ -52,7 +52,7 @@ namespace Domain.Services
                 }
                 else
                 {
-                    return (from p in rta where p.IdEsp == id select p);
+                    return from p in rta where p.IdEsp == id select p;
                 }
                 
             }

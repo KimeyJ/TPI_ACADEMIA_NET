@@ -32,19 +32,19 @@ namespace Domain
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Comision>()
-                  .HasKey(m => new { m.Id, m.PlanId });
+                  .HasKey(m => new { m.Id});
             modelBuilder.Entity<Curso>()
                   .HasKey(m => new { m.Id});
             modelBuilder.Entity<Especialidad>()
                   .HasKey(m => new { m.Id });
             modelBuilder.Entity<Materia>()
-                  .HasKey(m => new { m.Id, m.IdPlan });
+                  .HasKey(m => new { m.Id});
             modelBuilder.Entity<Persona>()
-                  .HasKey(m => new { m.Legajo });
+                  .HasKey(m => new { m.Legajo});
             modelBuilder.Entity<Plan>()
                   .HasKey(m => new { m.Id});
             modelBuilder.Entity<Usuario>()
-                  .HasKey(m => new { m.Id, m.IdPersona });
+                  .HasKey(m => new { m.Id});
         }
     }
 }

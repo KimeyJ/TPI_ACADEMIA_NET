@@ -16,6 +16,9 @@
     <Compile Update="WindowsForm\frmCurso.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="WindowsForm\frmCursoConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="WindowsForm\frmMateria.cs">
       <SubType>Form</SubType>
     </Compile>

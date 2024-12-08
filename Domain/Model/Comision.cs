@@ -9,7 +9,9 @@ namespace Domain.Model
 {
     public class Comision
     {
+        [Required]
         public int Id { get; set; }
+        [Required]
         public int PlanId { get; set; }
         public string Descripcion { get; set; }
     }

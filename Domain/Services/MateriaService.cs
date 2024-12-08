@@ -24,7 +24,7 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                Materia? MateriaToDelete = _context.Materias.Find(id, id_p);
+                Materia? MateriaToDelete = _context.Materias.Find(id);
                 if (MateriaToDelete != null)
                 {
                     _context.Materias.Remove(MateriaToDelete);
@@ -36,7 +36,7 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                return _context.Materias.Find(id, id_p);
+                return _context.Materias.Find(id);
             }
 
         }
@@ -60,7 +60,7 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                Materia? MateriaToUpdate = _context.Materias.Find(Materia.Id, Materia.IdPlan);
+                Materia? MateriaToUpdate = _context.Materias.Find(Materia.Id);
                 if (MateriaToUpdate != null)
                 {
                     MateriaToUpdate.Descripcion = Materia.Descripcion;
