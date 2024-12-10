@@ -30,10 +30,10 @@ namespace form_main.WindowsForm
             return curso;
         }
 
-        public static async Task<IEnumerable<Curso>> GetAllAsync()
+        public static async Task<IEnumerable<Curso>> GetAllAsync(int m_id, int c_id)
         {
             IEnumerable<Curso> cursos = null;
-            HttpResponseMessage response = await client.GetAsync("cursos");
+            HttpResponseMessage response = await client.GetAsync("cursos/" + m_id + "/" + c_id);
             if (response.IsSuccessStatusCode)
             {
                 cursos = await response.Content.ReadAsAsync<IEnumerable<Curso>>();

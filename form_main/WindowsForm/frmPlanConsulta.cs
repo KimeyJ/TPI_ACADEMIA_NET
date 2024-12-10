@@ -22,6 +22,8 @@ namespace form_main.WindowsForm
         public List<Especialidad> especialidades;
         public int current_esp_id = 0;
         public int current_pl_id = 0;
+        public int current_mat_id = 0;
+        public int current_com_id = 0;
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -198,6 +200,7 @@ namespace form_main.WindowsForm
             loadDataGrids(false);
             menuStrip1.Items[1].Enabled = true;
             menuStrip1.Items[2].Enabled = true;
+            menuStrip1.Items[3].Enabled = true;
         }
 
         public async void loadDataGrids(bool id)
@@ -210,7 +213,56 @@ namespace form_main.WindowsForm
             {
                 this.materiasDataGridView.DataSource = await MateriasApiClient.GetAllAsync(current_pl_id);
                 this.comisionesDataGridView.DataSource = await ComisionesApiClient.GetAllAsync(current_pl_id);
+                this.cursosDataGridView.DataSource = await CursosApiClient.GetAllAsync(current_mat_id, current_com_id);
             }
+        }
+
+        private void planesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comisionesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            current_com_id = ((Comision)comisionesDataGridView.SelectedRows[0].DataBoundItem).Id;
+        }
+
+        private void materiasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            current_mat_id = ((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).Id;
+        }
+
+        private void nuevoCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCurso nuevoCurso = new frmCurso();
+            nuevoCurso.MdiParent = this.MdiParent;
+            nuevoCurso.curso.ComisionId = current_com_id;
+            nuevoCurso.curso.MateriaId = current_mat_id;
+            nuevoCurso.Show();
+            if (nuevoCurso.IsDisposed)
+            {
+                loadDataGrids(false);
+            }
+        }
+
+        private void modificarCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCurso modCurso = new frmCurso();
+            modCurso.MdiParent = this.MdiParent;
+            modCurso.editMode = true;
+            modCurso.curso = (Curso)cursosDataGridView.SelectedRows[0].DataBoundItem;
+            modCurso.Show();
+            if (modCurso.IsDisposed)
+            {
+                loadDataGrids(false);
+            }
+        }
+
+        private async void eliminarCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CursosApiClient client = new CursosApiClient();
+            await CursosApiClient.DeleteAsync(((Curso)cursosDataGridView.SelectedRows[0].DataBoundItem).Id);
+            loadDataGrids(false);
         }
     }
 }

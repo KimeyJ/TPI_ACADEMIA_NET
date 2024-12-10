@@ -335,4 +335,49 @@ app.MapDelete("/comisiones/{id}", (int id) =>
 .WithName("DeleteComision")
 .WithOpenApi();
 
+app.MapGet("/cursos/all/{id_m}/{id_c}", (int id_m, int id_c) =>
+{
+    CursoService cursoService = new CursoService();
+
+    return cursoService.GetAll(id_m, id_c);
+})
+.WithName("GetAllCursos")
+.WithOpenApi();
+
+app.MapGet("/cursos/{id}", (int id) =>
+{
+    CursoService cursoService = new CursoService();
+
+    return cursoService.Get(id);
+})
+.WithName("GetCursos")
+.WithOpenApi();
+
+app.MapPost("/cursos", (Curso curso) =>
+{
+    CursoService cursoService = new CursoService();
+
+    cursoService.Add(curso);
+})
+.WithName("AddCurso")
+.WithOpenApi();
+
+app.MapPut("/cursos", (Curso curso) =>
+{
+    CursoService cursoService = new CursoService();
+
+    cursoService.Update(curso);
+})
+.WithName("UpdateCurso")
+.WithOpenApi();
+
+app.MapDelete("/cursos/{id}", (int id) =>
+{
+    CursoService cursoService = new CursoService();
+
+    cursoService.Delete(id);
+})
+.WithName("DeleteCurso")
+.WithOpenApi();
+
 app.Run();

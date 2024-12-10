@@ -41,11 +41,20 @@ namespace Domain.Services
 
         }
 
-        public IEnumerable<Curso> GetAll()
+        public IEnumerable<Curso> GetAll(int id_m, int id_c)
         {
             using (var _context = new AcademiaContext())
             {
-                return _context.Cursos.ToList();
+                var rta = _context.Cursos.ToList();
+                if (id_m == 0 && id_c == 0)
+                {
+                    return rta;
+                }
+                else
+                {
+                    return from c in rta where c.ComisionId == id_c && c.MateriaId == id_m select c; 
+                }
+                
             }
         }
         public void Update(Curso Curso)

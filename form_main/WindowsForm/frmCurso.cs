@@ -33,6 +33,8 @@ namespace form_main.WindowsForm
             {
                 CursosApiClient.AddAsync(curso);
             }
+
+            this.Dispose();
         }
 
         private void frmCurso_Load(object sender, EventArgs e)
