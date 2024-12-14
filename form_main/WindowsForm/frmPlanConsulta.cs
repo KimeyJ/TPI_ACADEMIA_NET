@@ -25,12 +25,6 @@ namespace form_main.WindowsForm
         public int current_mat_id = 0;
         public int current_com_id = 0;
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
         private async void frmPlanConsulta_Load(object sender, EventArgs e)
         {
             this.planesDataGridView.DataSource = null;
@@ -53,43 +47,6 @@ namespace form_main.WindowsForm
 
         }
 
-        private void cmbEspecialidad_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbEspecialidad_TextUpdate(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void dataGridView1_CursorChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
 
         private void crearUnPlanToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -205,31 +162,31 @@ namespace form_main.WindowsForm
 
         public async void loadDataGrids(bool id)
         {
+
             if (id)
             {
+                this.planesDataGridView.DataSource = null;
                 this.planesDataGridView.DataSource = await PlanesApiClient.GetAllAsync(current_esp_id);
             }
             else
             {
+                this.materiasDataGridView.DataSource = null;
+                this.comisionesDataGridView.DataSource = null;
+
                 this.materiasDataGridView.DataSource = await MateriasApiClient.GetAllAsync(current_pl_id);
                 this.comisionesDataGridView.DataSource = await ComisionesApiClient.GetAllAsync(current_pl_id);
-                this.cursosDataGridView.DataSource = await CursosApiClient.GetAllAsync(current_mat_id, current_com_id);
+                if(comisionesDataGridView.SelectedRows.Count > 0 && materiasDataGridView.SelectedRows.Count > 0)
+                {
+                    current_com_id = ((Comision)comisionesDataGridView.SelectedRows[0].DataBoundItem).Id;
+                    current_mat_id = ((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).Id;
+                    this.cursosDataGridView.DataSource = null;
+                    this.cursosDataGridView.DataSource = await CursosApiClient.GetAllAsync(current_mat_id, current_com_id);
+                }
+                else
+                {
+                    this.cursosDataGridView.DataSource = null;
+                }
             }
-        }
-
-        private void planesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comisionesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            current_com_id = ((Comision)comisionesDataGridView.SelectedRows[0].DataBoundItem).Id;
-        }
-
-        private void materiasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            current_mat_id = ((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).Id;
         }
 
         private void nuevoCursoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -263,6 +220,18 @@ namespace form_main.WindowsForm
             CursosApiClient client = new CursosApiClient();
             await CursosApiClient.DeleteAsync(((Curso)cursosDataGridView.SelectedRows[0].DataBoundItem).Id);
             loadDataGrids(false);
+        }
+
+        private async void comisionesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            current_com_id = ((Comision)comisionesDataGridView.SelectedRows[0].DataBoundItem).Id;
+            this.cursosDataGridView.DataSource = await CursosApiClient.GetAllAsync(current_mat_id, current_com_id);
+        }
+
+        private async void materiasDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            current_mat_id = ((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).Id;
+            this.cursosDataGridView.DataSource = await CursosApiClient.GetAllAsync(current_mat_id, current_com_id);
         }
     }
 }

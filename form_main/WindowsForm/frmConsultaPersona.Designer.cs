@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             personasApiClientBindingSource = new BindingSource(components);
-            btnFilter = new Button();
             btnModifcar = new Button();
             btnEliminar = new Button();
             dataGridView1 = new DataGridView();
@@ -43,21 +42,12 @@
             // 
             personasApiClientBindingSource.DataSource = typeof(PersonasApiClient);
             // 
-            // btnFilter
-            // 
-            btnFilter.AutoSize = true;
-            btnFilter.Location = new Point(373, 393);
-            btnFilter.Name = "btnFilter";
-            btnFilter.Size = new Size(133, 30);
-            btnFilter.TabIndex = 1;
-            btnFilter.Text = "Filtrar Resultados";
-            btnFilter.UseVisualStyleBackColor = true;
-            // 
             // btnModifcar
             // 
-            btnModifcar.Location = new Point(591, 394);
+            btnModifcar.Location = new Point(517, 296);
+            btnModifcar.Margin = new Padding(3, 2, 3, 2);
             btnModifcar.Name = "btnModifcar";
-            btnModifcar.Size = new Size(94, 29);
+            btnModifcar.Size = new Size(82, 22);
             btnModifcar.TabIndex = 2;
             btnModifcar.Text = "Modificar";
             btnModifcar.UseVisualStyleBackColor = true;
@@ -65,9 +55,10 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(691, 394);
+            btnEliminar.Location = new Point(605, 296);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(82, 22);
             btnEliminar.TabIndex = 3;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -76,36 +67,39 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(10, 9);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(773, 345);
+            dataGridView1.Size = new Size(676, 259);
             dataGridView1.TabIndex = 4;
             // 
             // button1
             // 
             button1.AutoSize = true;
             button1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button1.Location = new Point(512, 393);
+            button1.Location = new Point(448, 295);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(73, 30);
+            button1.Size = new Size(59, 25);
             button1.TabIndex = 5;
             button1.Text = "Agregar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // frmConsultaPersona
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(btnEliminar);
             Controls.Add(btnModifcar);
-            Controls.Add(btnFilter);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmConsultaPersona";
             Text = "frmConsultaPersona";
             Load += frmConsultaPersona_Load;
@@ -116,7 +110,6 @@
         }
 
         #endregion
-        private Button btnFilter;
         private Button btnModifcar;
         private Button btnEliminar;
         private BindingSource personasApiClientBindingSource;

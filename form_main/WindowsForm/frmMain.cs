@@ -61,7 +61,7 @@ namespace form_main
         {
             frmPersona nuevoProfesor = new frmPersona();
             nuevoProfesor.MdiParent = this;
-            nuevoProfesor.tipoPersona = 2;
+            nuevoProfesor.persona.Tipo_persona = 2;
             nuevoProfesor.Show();
         }
 
@@ -69,7 +69,7 @@ namespace form_main
         {
             frmPersona nuevoAlumno = new frmPersona();
             nuevoAlumno.MdiParent = this;
-            nuevoAlumno.tipoPersona = 1;
+            nuevoAlumno.persona.Tipo_persona = 1;
             nuevoAlumno.Show();
         }
 

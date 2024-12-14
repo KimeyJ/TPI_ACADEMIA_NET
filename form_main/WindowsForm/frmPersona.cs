@@ -15,7 +15,6 @@ namespace form_main.WindowsForm
     {
         public bool editMode = false;
         public Persona persona = new Persona();
-        public int tipoPersona;
         public frmPersona()
         {
             InitializeComponent();

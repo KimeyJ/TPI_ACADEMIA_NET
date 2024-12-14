@@ -33,7 +33,7 @@ namespace form_main.WindowsForm
         public static async Task<IEnumerable<Curso>> GetAllAsync(int m_id, int c_id)
         {
             IEnumerable<Curso> cursos = null;
-            HttpResponseMessage response = await client.GetAsync("cursos/" + m_id + "/" + c_id);
+            HttpResponseMessage response = await client.GetAsync("cursos/all/" + m_id + "/" + c_id);
             if (response.IsSuccessStatusCode)
             {
                 cursos = await response.Content.ReadAsAsync<IEnumerable<Curso>>();

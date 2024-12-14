@@ -62,5 +62,13 @@ namespace form_main.WindowsForm
             PersonasApiClient client = new PersonasApiClient();
             await PersonasApiClient.DeleteAsync(((Persona)dataGridView1.SelectedRows[0].DataBoundItem).Legajo);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmPersona nuevaPersona = new frmPersona();
+            nuevaPersona.MdiParent = form_main.ActiveForm;
+            nuevaPersona.persona.Tipo_persona = tipoPersona;
+            nuevaPersona.Show();
+        }
     }
 }

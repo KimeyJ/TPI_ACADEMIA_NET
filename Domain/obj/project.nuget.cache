@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FiiuChw+Uy1ppfS970+hwBC8dV2B0Iln0oMskxfMk8rN3wQwF/DAOH+/iMTtwGtV8ZSamKJIZfI+W5HHbiRRQg==",
+  "dgSpecHash": "aFpXDkE/bE8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Octavio\\Documents\\Desarollo de Software\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Octavio\\Documents\\Desarrollo IDE\\Net\\TPI_ACADEMIA_NET\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Octavio\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Octavio\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
