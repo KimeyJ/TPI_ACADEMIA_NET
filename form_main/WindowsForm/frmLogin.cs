@@ -66,7 +66,7 @@ namespace form_main
             {
                 MessageBox.Show("No hay un Usuario Maestro cargado en la base de datos, ahora sera redirigido para crear un nuevo usuario","Usuario Maestro Faltante",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 frmPersona per = new frmPersona();
-                per.tipoPersona = 3;
+                per.persona.Tipo_persona = 3;
                 per.ShowDialog();
             }
         }

@@ -29,7 +29,7 @@ namespace form_main.WindowsForm
         {
             frmComision nuevaComision = new frmComision();
             nuevaComision.MdiParent = this.MdiParent;
-            nuevaComision.comision.PlanId = idPlan;
+            nuevaComision.comision.IdPlan = idPlan;
             nuevaComision.Show();
             this.dataGridView1.DataSource = await ComisionesApiClient.GetAllAsync(idPlan);
         }
@@ -47,7 +47,7 @@ namespace form_main.WindowsForm
         private async void button3_Click(object sender, EventArgs e)
         {
             ComisionesApiClient client = new ComisionesApiClient();
-            await ComisionesApiClient.DeleteAsync(((Comision)dataGridView1.SelectedRows[0].DataBoundItem).Id);
+            await ComisionesApiClient.DeleteAsync(((Comision)dataGridView1.SelectedRows[0].DataBoundItem).ComisionId);
             this.dataGridView1.DataSource = await ComisionesApiClient.GetAllAsync(idPlan);
         }
     }

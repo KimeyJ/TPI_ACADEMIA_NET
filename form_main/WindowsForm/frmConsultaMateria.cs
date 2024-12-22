@@ -56,7 +56,7 @@ namespace form_main.WindowsForm
         private async void button3_Click(object sender, EventArgs e)
         {
             MateriasApiClient client = new MateriasApiClient();
-            await MateriasApiClient.DeleteAsync(((Materia)dataGridView1.SelectedRows[0].DataBoundItem).Id, ((Materia)dataGridView1.SelectedRows[0].DataBoundItem).IdPlan);
+            await MateriasApiClient.DeleteAsync(((Materia)dataGridView1.SelectedRows[0].DataBoundItem).MateriaId, ((Materia)dataGridView1.SelectedRows[0].DataBoundItem).IdPlan);
             this.dataGridView1.DataSource = await MateriasApiClient.GetAllAsync(idPlan);
         }
     }

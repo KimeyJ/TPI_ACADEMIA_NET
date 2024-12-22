@@ -15,12 +15,10 @@ namespace Domain.Model
         public string Email { get; set; }
         public string Telefono { get; set; }
         public DateTime Fecha_nac { get; set; }
-        [Key]
         public int Legajo {  get; set; }
         public int Tipo_persona { get; set; }
         public Especialidad Especialidad { get; set; }
-        public ICollection<Materia> Materias { get; set; } = new List<Materia>();
-        public ICollection<Curso> Cursos { get; set; } = new List<Curso>();
+        public List<Usuario> Usuarios { get; set; }
 
     }
 }

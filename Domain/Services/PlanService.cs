@@ -61,7 +61,7 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                Plan? PlanToUpdate = _context.Planes.Find(Plan.Id);
+                Plan? PlanToUpdate = _context.Planes.Find(Plan.PlanId);
                 if (PlanToUpdate != null)
                 {
                     PlanToUpdate.Descripcion = Plan.Descripcion;

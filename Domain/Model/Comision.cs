@@ -9,10 +9,10 @@ namespace Domain.Model
 {
     public class Comision
     {
-        [Required]
-        public int Id { get; set; }
-        [Required]
-        public int PlanId { get; set; }
+        public int ComisionId { get; set; }
+        public int IdPlan { get; set; }
+        public Plan Plan { get; set; }
         public string Descripcion { get; set; }
+        public List<Curso> Cursos { get; set; }
     }
 }

@@ -9,7 +9,8 @@ namespace Domain.Model
 {
     public class Especialidad
     {
-        public int Id { get; set; }
-        public string descripcion { get; set; }
+        public int EspecialidadId { get; set; }
+        public string Descripcion { get; set; }
+        public List<Plan> Planes { get; set; }
     }
 }

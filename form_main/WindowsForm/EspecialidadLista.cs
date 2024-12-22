@@ -34,7 +34,7 @@ namespace WindowsForms
 
             int id;
 
-            id = this.SelectedItem().Id;
+            id = this.SelectedItem().EspecialidadId;
 
             Especialidad especialidad = await EspecialidadesApiClient.GetAsync(id);
 
@@ -50,7 +50,7 @@ namespace WindowsForms
         {
             int id;
 
-            id = this.SelectedItem().Id;
+            id = this.SelectedItem().EspecialidadId;
             await EspecialidadesApiClient.DeleteAsync(id);
 
             this.GetAllAndLoad();

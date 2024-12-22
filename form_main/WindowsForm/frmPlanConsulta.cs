@@ -33,14 +33,14 @@ namespace form_main.WindowsForm
 
             foreach (var item in especialidades)
             {
-                cmbEspecialidad.Items.Add(item.descripcion);
+                cmbEspecialidad.Items.Add(item.Descripcion);
             }
 
         }
 
         private async void cmbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var esp = (from es in especialidades where es.descripcion == cmbEspecialidad.SelectedItem.ToString() select es.Id).First();
+            var esp = (from es in especialidades where es.Descripcion == cmbEspecialidad.SelectedItem.ToString() select es.EspecialidadId).First();
             this.planesDataGridView.DataSource = null;
             this.planesDataGridView.DataSource = await PlanesApiClient.GetAllAsync(esp);
             current_esp_id = esp;
@@ -115,7 +115,7 @@ namespace form_main.WindowsForm
         private async void eliminarMateriaSeleccionadaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MateriasApiClient client = new MateriasApiClient();
-            await MateriasApiClient.DeleteAsync(((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).Id, ((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).IdPlan);
+            await MateriasApiClient.DeleteAsync(((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).MateriaId, ((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).IdPlan);
             loadDataGrids(false);
         }
 
@@ -123,7 +123,7 @@ namespace form_main.WindowsForm
         {
             frmComision nuevaComision = new frmComision();
             nuevaComision.MdiParent = this.MdiParent;
-            nuevaComision.comision.PlanId = current_pl_id;
+            nuevaComision.comision.IdPlan = current_pl_id;
             nuevaComision.Show();
             if (nuevaComision.IsDisposed)
             {
@@ -147,13 +147,13 @@ namespace form_main.WindowsForm
         private async void eliminarComisionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ComisionesApiClient client = new ComisionesApiClient();
-            await ComisionesApiClient.DeleteAsync(((Comision)comisionesDataGridView.SelectedRows[0].DataBoundItem).Id);
+            await ComisionesApiClient.DeleteAsync(((Comision)comisionesDataGridView.SelectedRows[0].DataBoundItem).ComisionId);
             loadDataGrids(false);
         }
 
         private async void planesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            current_pl_id = ((Plan)planesDataGridView.SelectedRows[0].DataBoundItem).Id;
+            current_pl_id = ((Plan)planesDataGridView.SelectedRows[0].DataBoundItem).PlanId;
             loadDataGrids(false);
             menuStrip1.Items[1].Enabled = true;
             menuStrip1.Items[2].Enabled = true;
@@ -177,8 +177,8 @@ namespace form_main.WindowsForm
                 this.comisionesDataGridView.DataSource = await ComisionesApiClient.GetAllAsync(current_pl_id);
                 if(comisionesDataGridView.SelectedRows.Count > 0 && materiasDataGridView.SelectedRows.Count > 0)
                 {
-                    current_com_id = ((Comision)comisionesDataGridView.SelectedRows[0].DataBoundItem).Id;
-                    current_mat_id = ((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).Id;
+                    current_com_id = ((Comision)comisionesDataGridView.SelectedRows[0].DataBoundItem).ComisionId;
+                    current_mat_id = ((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).MateriaId;
                     this.cursosDataGridView.DataSource = null;
                     this.cursosDataGridView.DataSource = await CursosApiClient.GetAllAsync(current_mat_id, current_com_id);
                 }
@@ -193,8 +193,8 @@ namespace form_main.WindowsForm
         {
             frmCurso nuevoCurso = new frmCurso();
             nuevoCurso.MdiParent = this.MdiParent;
-            nuevoCurso.curso.ComisionId = current_com_id;
-            nuevoCurso.curso.MateriaId = current_mat_id;
+            nuevoCurso.curso.IdComision = current_com_id;
+            nuevoCurso.curso.IdMateria = current_mat_id;
             nuevoCurso.Show();
             if (nuevoCurso.IsDisposed)
             {
@@ -218,19 +218,19 @@ namespace form_main.WindowsForm
         private async void eliminarCursoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CursosApiClient client = new CursosApiClient();
-            await CursosApiClient.DeleteAsync(((Curso)cursosDataGridView.SelectedRows[0].DataBoundItem).Id);
+            await CursosApiClient.DeleteAsync(((Curso)cursosDataGridView.SelectedRows[0].DataBoundItem).CursoId);
             loadDataGrids(false);
         }
 
         private async void comisionesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            current_com_id = ((Comision)comisionesDataGridView.SelectedRows[0].DataBoundItem).Id;
+            current_com_id = ((Comision)comisionesDataGridView.SelectedRows[0].DataBoundItem).ComisionId;
             this.cursosDataGridView.DataSource = await CursosApiClient.GetAllAsync(current_mat_id, current_com_id);
         }
 
         private async void materiasDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            current_mat_id = ((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).Id;
+            current_mat_id = ((Materia)materiasDataGridView.SelectedRows[0].DataBoundItem).MateriaId;
             this.cursosDataGridView.DataSource = await CursosApiClient.GetAllAsync(current_mat_id, current_com_id);
         }
     }

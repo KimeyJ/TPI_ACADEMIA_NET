@@ -64,7 +64,6 @@ namespace form_main.WindowsForm
             persona.Email = txtMail.Text;
             persona.Telefono = txtTelefono.Text;
             persona.Fecha_nac = mcNac.SelectionRange.Start;
-            persona.Tipo_persona = tipoPersona;
 
 
             if(ValidationCheck(persona))

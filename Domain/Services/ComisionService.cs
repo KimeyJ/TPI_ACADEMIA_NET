@@ -52,7 +52,7 @@ namespace Domain.Services
                 }
                 else
                 {
-                    return from c in rta where c.PlanId == id select c;
+                    return from c in rta where c.IdPlan == id select c;
                 }
             }
         }
@@ -60,11 +60,11 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                Comision? ComisionToUpdate = _context.Comisiones.Find(Comision.Id);
+                Comision? ComisionToUpdate = _context.Comisiones.Find(Comision.ComisionId);
                 if (ComisionToUpdate != null)
                 {
                     ComisionToUpdate.Descripcion = Comision.Descripcion;
-                    ComisionToUpdate.PlanId = Comision.PlanId;
+                    ComisionToUpdate.IdPlan = Comision.IdPlan;
                     _context.SaveChanges();
                 }
             }

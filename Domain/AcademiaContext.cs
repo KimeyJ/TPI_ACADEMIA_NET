@@ -32,20 +32,33 @@ namespace Domain
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Comision>()
-                  .HasKey(m => m.Id);
+                .HasOne(c=> c.Plan)
+                .WithMany(p => p.Comisiones)
+                .HasForeignKey(c=> c.IdPlan);
+
             modelBuilder.Entity<Curso>()
-                  .HasKey(m => m.Id);
-            modelBuilder.Entity<Especialidad>()
-                  .HasKey(m => m.Id);
+                  .HasOne(c=>c.Materia)
+                  .WithMany(m=> m.Cursos)
+                  .HasForeignKey(c=> c.IdMateria);
+            modelBuilder.Entity<Curso>()
+                .HasOne(c=>c.Comision)
+                .WithMany(m=> m.Cursos)
+                .HasForeignKey(c=> c.IdComision);
+            modelBuilder.Entity<Curso>().HasOne(c => c.Profesor);
+            modelBuilder.Entity<Curso>().HasMany(c => c.Alumnos);
+
             modelBuilder.Entity<Materia>()
-                  .HasKey(m => m.Id);
-            modelBuilder.Entity<Persona>().HasMany(m => m.Cursos);
-            modelBuilder.Entity<Persona>().HasMany(m => m.Materias);
+                  .HasOne(m => m.Plan)
+                  .WithMany(p => p.Materias)
+                  .HasForeignKey(m => m.IdPlan);
+
             modelBuilder.Entity<Persona>().HasOne(m => m.Especialidad);
+            modelBuilder.Entity<Persona>().HasKey(p => p.Legajo);
+
             modelBuilder.Entity<Plan>()
-                  .HasKey(m => m.Id);
+                  .HasOne(p => p.Especialidad).WithMany(e=> e.Planes).HasForeignKey(p => p.IdEsp);
             modelBuilder.Entity<Usuario>()
-                  .HasKey(m => m.Id);
+                  .HasOne(u => u.Persona).WithMany(p => p.Usuarios).HasForeignKey(u=>u.IdPersona);
         }
     }
 }

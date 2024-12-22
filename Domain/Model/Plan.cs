@@ -9,10 +9,12 @@ namespace Domain.Model
 {
     public class Plan
     {
-        public int Id { get; set; }
+        public int PlanId { get; set; }
         [Required]
         public int IdEsp { get; set; }
-        [Required]
+        public Especialidad Especialidad { get; set; }
+        public List<Materia> Materias { get; set; }
+        public List<Comision> Comisiones { get; set; }
         public int Año { get; set; }
         public string Descripcion { get; set; }
     }

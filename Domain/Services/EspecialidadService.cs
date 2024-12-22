@@ -54,10 +54,10 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                Especialidad? especialidadToUpdate = _context.Especialidades.Find(especialidad.Id);
+                Especialidad? especialidadToUpdate = _context.Especialidades.Find(especialidad.EspecialidadId);
                 if (especialidadToUpdate != null)
                 {
-                    especialidadToUpdate.descripcion = especialidad.descripcion;
+                    especialidadToUpdate.Descripcion = especialidad.Descripcion;
                     _context.SaveChanges();
                 }
             }

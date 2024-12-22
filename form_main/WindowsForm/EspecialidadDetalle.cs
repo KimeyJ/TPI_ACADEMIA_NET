@@ -39,7 +39,7 @@ namespace WindowsForms
 
             if (this.ValidateEspecialidad())
             {
-                this.Especialidad.descripcion = descripcionTextBox.Text;
+                this.Especialidad.Descripcion = descripcionTextBox.Text;
 
                 if (this.EditMode)
                 {
@@ -61,7 +61,7 @@ namespace WindowsForms
 
         private void SetEspecialidad()
         {
-            this.descripcionTextBox.Text = this.Especialidad.descripcion;
+            this.descripcionTextBox.Text = this.Especialidad.Descripcion;
         }
 
         private bool ValidateEspecialidad()

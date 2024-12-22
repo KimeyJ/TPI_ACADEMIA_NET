@@ -65,7 +65,7 @@ namespace Domain.Services
                 Usuario rta = _context.Usuarios.Single(u => u.Username == user);
                 if(rta != null)
                 {
-                    if(rta.Id == id)
+                    if(rta.UsuarioId == id)
                     {
                         return false;
                     }
@@ -92,7 +92,7 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                Usuario? UsuarioToUpdate = _context.Usuarios.Find(Usuario.Id, Usuario.IdPersona);
+                Usuario? UsuarioToUpdate = _context.Usuarios.Find(Usuario.UsuarioId, Usuario.IdPersona);
                 if (UsuarioToUpdate != null)
                 {
                     UsuarioToUpdate.Username = Usuario.Username;

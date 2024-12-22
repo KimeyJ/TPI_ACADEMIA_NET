@@ -9,12 +9,13 @@ namespace Domain.Model
 {
     public class Curso
     {
-        public int Id { get; set; }
-        [Required]
-        public int MateriaId { get; set; }
-        [Required]
-        public int ComisionId { get; set; }
-        public Persona Profesor { get; set; }
+        public int CursoId { get; set; }
+        public int IdMateria { get; set; }
+        public Materia Materia { get; set; }
+        public int IdComision { get; set; }
+        public Comision Comision { get; set; }
+        public Persona Profesor { get; set; }  
+        public List<Persona> Alumnos { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public int Cupo { get; set; }

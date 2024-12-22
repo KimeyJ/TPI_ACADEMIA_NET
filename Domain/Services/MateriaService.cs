@@ -60,7 +60,7 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                Materia? MateriaToUpdate = _context.Materias.Find(Materia.Id);
+                Materia? MateriaToUpdate = _context.Materias.Find(Materia.MateriaId);
                 if (MateriaToUpdate != null)
                 {
                     MateriaToUpdate.Descripcion = Materia.Descripcion;

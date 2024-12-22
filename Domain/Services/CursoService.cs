@@ -52,7 +52,7 @@ namespace Domain.Services
                 }
                 else
                 {
-                    return from c in rta where c.ComisionId == id_c && c.MateriaId == id_m select c; 
+                    return from c in rta where c.IdComision == id_c && c.IdMateria == id_m select c; 
                 }
                 
             }
@@ -61,12 +61,12 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                Curso? CursoToUpdate = _context.Cursos.Find(Curso.Id);
+                Curso? CursoToUpdate = _context.Cursos.Find(Curso.CursoId);
                 if (CursoToUpdate != null)
                 {
                     CursoToUpdate.Descripcion = Curso.Descripcion;
-                    CursoToUpdate.MateriaId = Curso.MateriaId;
-                    CursoToUpdate.ComisionId = Curso.ComisionId;
+                    CursoToUpdate.IdMateria = Curso.IdMateria;
+                    CursoToUpdate.IdComision = Curso.IdComision;
                     CursoToUpdate.AñoCalendario = Curso.AñoCalendario;
                     CursoToUpdate.Cupo = Curso.Cupo;
                     CursoToUpdate.Nombre = Curso.Nombre;

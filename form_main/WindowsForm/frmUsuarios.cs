@@ -53,7 +53,7 @@ namespace form_main
             if(editMode == true && usuario.Username != txtUsername.Text)
             {
                 UsuariosApiClient client = new UsuariosApiClient();
-                if (await UsuariosApiClient.CheckDuplicateAsync(txtUsername.Text, usuario.Id))
+                if (await UsuariosApiClient.CheckDuplicateAsync(txtUsername.Text, usuario.UsuarioId))
                 {
                     validationResult = true;
                 }
