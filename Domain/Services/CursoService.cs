@@ -57,6 +57,17 @@ namespace Domain.Services
                 
             }
         }
+
+        public IEnumerable<Curso> GetAllByPlan(int id_pl)
+        {
+            using (var _context = new AcademiaContext())
+            {
+                var rta = _context.Cursos.ToList();
+                return from c in rta where c.Comision.IdPlan == id_pl && c.Materia.IdPlan == id_pl select c;
+
+            }
+        }
+
         public void Update(Curso Curso)
         {
             using (var _context = new AcademiaContext())

@@ -31,6 +31,17 @@ namespace WindowsForm
             return plan;
         }
 
+        public static async Task<Plan> GetLastAsync(int id)
+        {
+            Plan plan = null;
+            HttpResponseMessage response = await client.GetAsync("planes/last/"+id);
+            if (response.IsSuccessStatusCode)
+            {
+                plan = await response.Content.ReadAsAsync<Plan>();
+            }
+            return plan;
+        }
+
         public static async Task<IEnumerable<Plan>> GetAllAsync(int id)
         {
             IEnumerable<Plan> planes = null;

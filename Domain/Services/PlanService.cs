@@ -1,4 +1,5 @@
 ﻿using Domain.Model;
+using Microsoft.AspNetCore.Http.Timeouts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,17 @@ namespace Domain.Services
                 
             }
         }
+
+        public Plan GetLast(int id)
+        {
+            using(var _context = new AcademiaContext())
+            {
+                var planes = _context.Planes.ToList();
+                var planEsp = from p in planes where p.IdEsp == id select p;
+                return (Plan)planEsp.Last();
+            }
+        }
+
         public void Update(Plan Plan)
         {
             using (var _context = new AcademiaContext())

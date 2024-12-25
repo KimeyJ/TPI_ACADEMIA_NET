@@ -218,6 +218,14 @@ app.MapGet("/planes/all/{p_id}", (int p_id) =>
 .WithName("GetAllPlanes")
 .WithOpenApi();
 
+app.MapGet("/planes/last/{esp_id}", (int esp_id) =>
+{
+    PlanService planService = new PlanService();
+    return planService.GetLast(esp_id);
+})
+.WithName("GetLastPlan")
+.WithOpenApi();
+
 app.MapPost("/planes", (Plan plan) =>
 {
     PlanService planService = new PlanService();
@@ -342,6 +350,15 @@ app.MapGet("/cursos/all/{id_m}/{id_c}", (int id_m, int id_c) =>
     return cursoService.GetAll(id_m, id_c);
 })
 .WithName("GetAllCursos")
+.WithOpenApi();
+
+app.MapGet("/cursos/plan/{id_pl}", (int id_pl) =>
+{
+    CursoService cursoService = new CursoService();
+
+    return cursoService.GetAllByPlan(id_pl);
+})
+.WithName("GetAllCursosByPlan")
 .WithOpenApi();
 
 app.MapGet("/cursos/{id}", (int id) =>

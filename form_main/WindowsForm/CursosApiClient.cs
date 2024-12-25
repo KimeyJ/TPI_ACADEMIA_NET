@@ -40,6 +40,16 @@ namespace form_main.WindowsForm
             }
             return cursos;
         }
+        public static async Task<IEnumerable<Curso>> GetAllByPlanAsync(int id_pl)
+        {
+            IEnumerable<Curso> cursos = null;
+            HttpResponseMessage response = await client.GetAsync("cursos/plan/"+ id_pl);
+            if (response.IsSuccessStatusCode)
+            {
+                cursos = await response.Content.ReadAsAsync<IEnumerable<Curso>>();
+            }
+            return cursos;
+        }
         public async static Task AddAsync(Curso curso)
         {
             HttpResponseMessage response = await client.PostAsJsonAsync("cursos", curso);

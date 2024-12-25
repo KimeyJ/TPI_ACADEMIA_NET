@@ -19,25 +19,27 @@ namespace form_main.WindowsForm
         }
         public Curso curso = new Curso();
         public bool editMode = false;
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             curso.Cupo = Convert.ToInt32(textBox2.Text);
             curso.Nombre = textBox1.Text;
             curso.AñoCalendario = DateTime.Now.Year;
             curso.Descripcion = richTextBox1.Text;
+            curso.Profesor = (Persona)profDataGridView.SelectedRows[0].DataBoundItem;
+
             if (editMode)
             {
-                CursosApiClient.UpdateAsync(curso);
+                await CursosApiClient.UpdateAsync(curso);
             }
             else
             {
-                CursosApiClient.AddAsync(curso);
+                await CursosApiClient.AddAsync(curso);
             }
 
             this.Dispose();
         }
 
-        private void frmCurso_Load(object sender, EventArgs e)
+        private async void frmCurso_Load(object sender, EventArgs e)
         {
             if (editMode)
             {
@@ -45,6 +47,7 @@ namespace form_main.WindowsForm
                 textBox1.Text = curso.Nombre;
                 richTextBox1.Text = curso.Descripcion;
             }
+            this.profDataGridView.DataSource = await PersonasApiClient.GetAllAsync(2);
         }
     }
 }

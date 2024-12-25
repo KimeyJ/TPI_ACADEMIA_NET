@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Model
 {
-    public class Persona
+    public abstract class Persona
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -16,9 +17,19 @@ namespace Domain.Model
         public string Telefono { get; set; }
         public DateTime Fecha_nac { get; set; }
         public int Legajo {  get; set; }
-        public int Tipo_persona { get; set; }
-        public Especialidad Especialidad { get; set; }
         public List<Usuario> Usuarios { get; set; }
+        
 
+    }
+
+    public class Profesor: Persona
+    {
+        public List<Curso> Cursos { get; set; }
+    }
+
+    public class Alumno: Persona
+    {
+        public List<Curso> Cursos { get; set; }
+        public Especialidad Especialidad { get; set; }
     }
 }

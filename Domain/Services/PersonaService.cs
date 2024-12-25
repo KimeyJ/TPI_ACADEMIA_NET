@@ -47,17 +47,8 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                var rta = _context.Personas.ToList();
-                if (tipoPersona == 0)
-                {
-                    return rta;
+                return _context.Personas.ToList();
                 }
-                else
-                {
-                    return from p in rta where p.Tipo_persona == tipoPersona select p;
-                }
-                
-            }
         }
         public void Update(Persona Persona)
         {
@@ -72,7 +63,6 @@ namespace Domain.Services
                     PersonaToUpdate.Email = Persona.Email;
                     PersonaToUpdate.Fecha_nac = Persona.Fecha_nac;
                     PersonaToUpdate.Telefono = Persona.Telefono;
-                    PersonaToUpdate.Tipo_persona = Persona.Tipo_persona;
                     _context.SaveChanges();
                 }
             }

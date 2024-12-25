@@ -35,11 +35,14 @@
             textBox2 = new TextBox();
             label3 = new Label();
             button1 = new Button();
+            label4 = new Label();
+            profDataGridView = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)profDataGridView).BeginInit();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(94, 34);
+            textBox1.Location = new Point(94, 22);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(110, 23);
@@ -48,7 +51,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(13, 35);
+            label1.Location = new Point(13, 23);
             label1.Name = "label1";
             label1.Size = new Size(51, 15);
             label1.TabIndex = 1;
@@ -56,7 +59,7 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(10, 139);
+            richTextBox1.Location = new Point(10, 324);
             richTextBox1.Margin = new Padding(3, 2, 3, 2);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new Size(438, 91);
@@ -66,7 +69,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(20, 76);
+            label2.Location = new Point(20, 64);
             label2.Name = "label2";
             label2.Size = new Size(36, 15);
             label2.TabIndex = 3;
@@ -74,7 +77,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(86, 75);
+            textBox2.Location = new Point(95, 63);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(110, 23);
@@ -83,7 +86,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(19, 116);
+            label3.Location = new Point(19, 301);
             label3.Name = "label3";
             label3.Size = new Size(164, 15);
             label3.TabIndex = 5;
@@ -91,7 +94,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(342, 299);
+            button1.Location = new Point(366, 440);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(82, 22);
@@ -100,11 +103,35 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(14, 102);
+            label4.Name = "label4";
+            label4.Size = new Size(127, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Seleccione un Profesor";
+            // 
+            // profDataGridView
+            // 
+            profDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            profDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            profDataGridView.Location = new Point(12, 135);
+            profDataGridView.MultiSelect = false;
+            profDataGridView.Name = "profDataGridView";
+            profDataGridView.ReadOnly = true;
+            profDataGridView.RowHeadersWidth = 51;
+            profDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            profDataGridView.Size = new Size(442, 150);
+            profDataGridView.TabIndex = 19;
+            // 
             // frmCurso
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(472, 338);
+            ClientSize = new Size(466, 468);
+            Controls.Add(profDataGridView);
+            Controls.Add(label4);
             Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(textBox2);
@@ -116,6 +143,7 @@
             Name = "frmCurso";
             Text = "frmCurso";
             Load += frmCurso_Load;
+            ((System.ComponentModel.ISupportInitialize)profDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,5 +157,7 @@
         private TextBox textBox2;
         private Label label3;
         private Button button1;
+        private Label label4;
+        private DataGridView profDataGridView;
     }
 }

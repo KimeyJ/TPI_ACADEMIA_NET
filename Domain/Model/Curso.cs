@@ -14,8 +14,8 @@ namespace Domain.Model
         public Materia Materia { get; set; }
         public int IdComision { get; set; }
         public Comision Comision { get; set; }
-        public Persona Profesor { get; set; }  
-        public List<Persona> Alumnos { get; set; }
+        public Profesor Profesor { get; set; }  
+        public List<Alumno> Alumnos { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public int Cupo { get; set; }

@@ -10,7 +10,6 @@ namespace Domain.Model
     public class Plan
     {
         public int PlanId { get; set; }
-        [Required]
         public int IdEsp { get; set; }
         public Especialidad Especialidad { get; set; }
         public List<Materia> Materias { get; set; }

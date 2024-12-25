@@ -1,66 +1,15 @@
-C:\Users\jeand\OneDrive\Escritorio\Repos\TPI-Academia\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
-C:\Users\jeand\OneDrive\Escritorio\Repos\TPI-Academia\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jeand\OneDrive\Escritorio\Repos\TPI-Academia\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
-C:\Users\jeand\OneDrive\Escritorio\Repos\TPI-Academia\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
-C:\Users\jeand\OneDrive\Escritorio\Repos\TPI-Academia\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\jeand\OneDrive\Escritorio\Repos\TPI-Academia\Domain\obj\Debug\net8.0\Domain.sourcelink.json
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.sourcelink.json
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.deps.json
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.runtimeconfig.json
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.dll
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.pdb
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.dll
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\refint\Domain.dll
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.pdb
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
-C:\Users\maste\Desktop\Repos\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\ref\Domain.dll
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.deps.json
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.runtimeconfig.json
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.dll
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.pdb
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.sourcelink.json
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.dll
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\refint\Domain.dll
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.pdb
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
-C:\Users\ALUMNO\Documents\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\ref\Domain.dll
-C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.deps.json
-C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.runtimeconfig.json
-C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.dll
-C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.pdb
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.runtimeconfig.json
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.pdb
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.dll
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\ref\Domain.dll
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.deps.json
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.runtimeconfig.json
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.dll
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\bin\Debug\net8.0\Domain.pdb
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.sourcelink.json
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.dll
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\refint\Domain.dll
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.pdb
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
-C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\Domain\obj\Debug\net8.0\ref\Domain.dll

@@ -14,5 +14,6 @@ namespace Domain.Model
         public Persona Persona { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public bool isAdmin { get; set; }
     }
 }

@@ -16,6 +16,8 @@ namespace Domain
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Materia> Materias { get; set; }
         public DbSet<Persona> Personas { get; set; }
+        public DbSet<Alumno> Alumnos { get; set; }
+        public DbSet<Profesor> Profesors { get; set; }
         public DbSet<Plan> Planes { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public AcademiaContext()
@@ -39,20 +41,18 @@ namespace Domain
             modelBuilder.Entity<Curso>()
                   .HasOne(c=>c.Materia)
                   .WithMany(m=> m.Cursos)
-                  .HasForeignKey(c=> c.IdMateria);
+                  .HasForeignKey(c=> c.IdMateria).OnDelete(DeleteBehavior.NoAction);
             modelBuilder.Entity<Curso>()
                 .HasOne(c=>c.Comision)
                 .WithMany(m=> m.Cursos)
                 .HasForeignKey(c=> c.IdComision);
-            modelBuilder.Entity<Curso>().HasOne(c => c.Profesor);
-            modelBuilder.Entity<Curso>().HasMany(c => c.Alumnos);
+            modelBuilder.Entity<Curso>().HasOne(c => c.Profesor).WithMany(p => p.Cursos).OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Materia>()
                   .HasOne(m => m.Plan)
                   .WithMany(p => p.Materias)
                   .HasForeignKey(m => m.IdPlan);
 
-            modelBuilder.Entity<Persona>().HasOne(m => m.Especialidad);
             modelBuilder.Entity<Persona>().HasKey(p => p.Legajo);
 
             modelBuilder.Entity<Plan>()

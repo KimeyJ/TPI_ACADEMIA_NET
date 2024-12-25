@@ -107,5 +107,12 @@ namespace form_main
             nuevaConsulta.MdiParent = this;
             nuevaConsulta.Show();
         }
+
+        private void anotarseAUnCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInscripcion nuevaInscripcion = new frmInscripcion();
+            nuevaInscripcion.MdiParent = this;
+            nuevaInscripcion.Show();
+        }
     }
 }
