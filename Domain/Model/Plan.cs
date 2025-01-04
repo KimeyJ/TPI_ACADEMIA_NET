@@ -14,6 +14,7 @@ namespace Domain.Model
         public Especialidad Especialidad { get; set; }
         public List<Materia> Materias { get; set; }
         public List<Comision> Comisiones { get; set; }
+        public List<Persona> Alumnos { get; set; }
         public int Año { get; set; }
         public string Descripcion { get; set; }
     }

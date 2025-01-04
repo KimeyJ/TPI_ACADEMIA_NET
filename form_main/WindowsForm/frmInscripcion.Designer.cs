@@ -28,30 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cmbEspecialidad = new ComboBox();
-            label1 = new Label();
             btnAceptar = new Button();
             cursosDataGridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)cursosDataGridView).BeginInit();
             SuspendLayout();
-            // 
-            // cmbEspecialidad
-            // 
-            cmbEspecialidad.FormattingEnabled = true;
-            cmbEspecialidad.Location = new Point(98, 23);
-            cmbEspecialidad.Name = "cmbEspecialidad";
-            cmbEspecialidad.Size = new Size(121, 23);
-            cmbEspecialidad.TabIndex = 0;
-            cmbEspecialidad.SelectedIndexChanged += cmbEspecialidad_SelectedIndexChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(20, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(72, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Especialidad";
             // 
             // btnAceptar
             // 
@@ -61,6 +41,7 @@
             btnAceptar.TabIndex = 3;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // cursosDataGridView
             // 
@@ -77,20 +58,14 @@
             ClientSize = new Size(538, 414);
             Controls.Add(btnAceptar);
             Controls.Add(cursosDataGridView);
-            Controls.Add(label1);
-            Controls.Add(cmbEspecialidad);
             Name = "frmInscripcion";
             Text = "frmInscripcion";
             Load += frmInscripcion_Load;
             ((System.ComponentModel.ISupportInitialize)cursosDataGridView).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private ComboBox cmbEspecialidad;
-        private Label label1;
         private Button btnAceptar;
         private DataGridView cursosDataGridView;
     }

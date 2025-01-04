@@ -8,7 +8,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Model
 {
-    public abstract class Persona
+    public class Persona
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -17,19 +17,12 @@ namespace Domain.Model
         public string Telefono { get; set; }
         public DateTime Fecha_nac { get; set; }
         public int Legajo {  get; set; }
+        public int Tipo_persona { get; set; } // 1: Alumno  2: Profesor     3: Administrador
         public List<Usuario> Usuarios { get; set; }
+        public List<Docente_Curso> CursosProfesor { get; set; }
+        public List<Inscripcion> CursosAlumno { get; set; }
+        public int IdPlan { get; set; }
+
+    }
         
-
-    }
-
-    public class Profesor: Persona
-    {
-        public List<Curso> Cursos { get; set; }
-    }
-
-    public class Alumno: Persona
-    {
-        public List<Curso> Cursos { get; set; }
-        public Especialidad Especialidad { get; set; }
-    }
 }

@@ -92,7 +92,7 @@ namespace Domain.Services
         {
             using (var _context = new AcademiaContext())
             {
-                Usuario? UsuarioToUpdate = _context.Usuarios.Find(Usuario.UsuarioId, Usuario.IdPersona);
+                Usuario? UsuarioToUpdate = _context.Usuarios.Find(Usuario.UsuarioId);
                 if (UsuarioToUpdate != null)
                 {
                     UsuarioToUpdate.Username = Usuario.Username;

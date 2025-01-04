@@ -52,15 +52,13 @@
             moficarDatosPersonalesToolStripMenuItem = new ToolStripMenuItem();
             modifcarUsuarioToolStripMenuItem = new ToolStripMenuItem();
             toolStripLabel1 = new ToolStripLabel();
-            toolStripDropDownButton2 = new ToolStripDropDownButton();
-            anotarseAUnCursoToolStripMenuItem = new ToolStripMenuItem();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tssbAlumno, tsddProfesor, tsddPlan, toolStripDropDownButton1, toolStripLabel1, toolStripDropDownButton2 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tssbAlumno, tsddProfesor, tsddPlan, toolStripDropDownButton1, toolStripLabel1 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(700, 25);
@@ -82,6 +80,7 @@
             inscripcionACursadoToolStripMenuItem.Name = "inscripcionACursadoToolStripMenuItem";
             inscripcionACursadoToolStripMenuItem.Size = new Size(209, 22);
             inscripcionACursadoToolStripMenuItem.Text = "Inscripcion a Cursado";
+            inscripcionACursadoToolStripMenuItem.Click += inscripcionACursadoToolStripMenuItem_Click;
             // 
             // inscripcionAExamenToolStripMenuItem
             // 
@@ -224,23 +223,6 @@
             toolStripLabel1.Text = "Especialidades";
             toolStripLabel1.Click += toolStripLabel1_Click_1;
             // 
-            // toolStripDropDownButton2
-            // 
-            toolStripDropDownButton2.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripDropDownButton2.DropDownItems.AddRange(new ToolStripItem[] { anotarseAUnCursoToolStripMenuItem });
-            toolStripDropDownButton2.Image = (Image)resources.GetObject("toolStripDropDownButton2.Image");
-            toolStripDropDownButton2.ImageTransparentColor = Color.Magenta;
-            toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            toolStripDropDownButton2.Size = new Size(56, 22);
-            toolStripDropDownButton2.Text = "Cursos";
-            // 
-            // anotarseAUnCursoToolStripMenuItem
-            // 
-            anotarseAUnCursoToolStripMenuItem.Name = "anotarseAUnCursoToolStripMenuItem";
-            anotarseAUnCursoToolStripMenuItem.Size = new Size(181, 22);
-            anotarseAUnCursoToolStripMenuItem.Text = "Anotarse a un Curso";
-            anotarseAUnCursoToolStripMenuItem.Click += anotarseAUnCursoToolStripMenuItem_Click;
-            // 
             // form_main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -284,7 +266,5 @@
         private ToolStripMenuItem consultaProfesoresToolStripMenuItem;
         private ToolStripLabel toolStripLabel1;
         private ToolStripMenuItem planesToolStripMenuItem;
-        private ToolStripDropDownButton toolStripDropDownButton2;
-        private ToolStripMenuItem anotarseAUnCursoToolStripMenuItem;
     }
 }

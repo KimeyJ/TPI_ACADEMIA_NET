@@ -16,8 +16,8 @@ namespace Domain
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Materia> Materias { get; set; }
         public DbSet<Persona> Personas { get; set; }
-        public DbSet<Alumno> Alumnos { get; set; }
-        public DbSet<Profesor> Profesors { get; set; }
+        public DbSet<Inscripcion> Inscripciones_Alumnos { get; set; }
+        public DbSet<Docente_Curso> Docentes_Cursos { get; set; }
         public DbSet<Plan> Planes { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public AcademiaContext()
@@ -46,7 +46,24 @@ namespace Domain
                 .HasOne(c=>c.Comision)
                 .WithMany(m=> m.Cursos)
                 .HasForeignKey(c=> c.IdComision);
-            modelBuilder.Entity<Curso>().HasOne(c => c.Profesor).WithMany(p => p.Cursos).OnDelete(DeleteBehavior.NoAction);
+            
+            modelBuilder.Entity<Docente_Curso>()
+                .HasOne(dc => dc.Docente)
+                .WithMany(p => p.CursosProfesor)
+                .HasForeignKey(dc => dc.IdDocente).OnDelete(DeleteBehavior.NoAction);
+            modelBuilder.Entity<Docente_Curso>()
+                .HasOne(dc => dc.Curso)
+                .WithMany(c => c.Profesores)
+                .HasForeignKey(dc => dc.IdCurso);
+
+            modelBuilder.Entity<Inscripcion>()
+                .HasOne(i => i.Alumno)
+                .WithMany(p => p.CursosAlumno)
+                .HasForeignKey(i => i.IdAlumno);
+            modelBuilder.Entity<Inscripcion>()
+                .HasOne(i => i.Curso)
+                .WithMany(c => c.Alumnos)
+                .HasForeignKey(i => i.IdAlumno).OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Materia>()
                   .HasOne(m => m.Plan)
@@ -56,9 +73,14 @@ namespace Domain
             modelBuilder.Entity<Persona>().HasKey(p => p.Legajo);
 
             modelBuilder.Entity<Plan>()
-                  .HasOne(p => p.Especialidad).WithMany(e=> e.Planes).HasForeignKey(p => p.IdEsp);
+                  .HasOne(p => p.Especialidad)
+                  .WithMany(e=> e.Planes)
+                  .HasForeignKey(p => p.IdEsp);
+
             modelBuilder.Entity<Usuario>()
-                  .HasOne(u => u.Persona).WithMany(p => p.Usuarios).HasForeignKey(u=>u.IdPersona);
+                  .HasOne(u => u.Persona)
+                  .WithMany(p => p.Usuarios)
+                  .HasForeignKey(u=>u.IdPersona);
         }
     }
 }

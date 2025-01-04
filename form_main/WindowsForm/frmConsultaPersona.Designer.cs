@@ -1,4 +1,6 @@
-﻿namespace form_main.WindowsForm
+﻿using form_main.APIs;
+
+namespace form_main.WindowsForm
 {
     partial class frmConsultaPersona
     {

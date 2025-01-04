@@ -1,4 +1,5 @@
 ﻿using Domain.Model;
+using form_main.APIs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsForm;
 
 namespace form_main.WindowsForm
 {
@@ -19,27 +19,30 @@ namespace form_main.WindowsForm
             InitializeComponent();
         }
 
-        public List<Especialidad> especialidades;
+        public List<Curso> cursos;
+        public Persona persona;
 
-        private async void cmbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var esp = (from es in especialidades where es.Descripcion == cmbEspecialidad.SelectedItem.ToString() select es.EspecialidadId).First();
-            Plan plan = await PlanesApiClient.GetLastAsync(esp);
-            MessageBox.Show(plan.PlanId.ToString());
-            var cursos = await CursosApiClient.GetAllByPlanAsync(plan.PlanId);
-            this.cursosDataGridView.DataSource = (from c in cursos where c.Cupo > 0 select c);
-        }
 
         private async void frmInscripcion_Load(object sender, EventArgs e)
         {
             this.cursosDataGridView.DataSource = null;
-            EspecialidadesApiClient client = new EspecialidadesApiClient();
-            especialidades = (List<Especialidad>)await EspecialidadesApiClient.GetAllAsync().ConfigureAwait(false);
+            cursos = (List<Curso>)await CursosApiClient.GetAllByPlanAsync(persona.IdPlan);
+            this.cursosDataGridView.DataSource = from c in cursos where c.Cupo > 0 select c;
+        }
 
-            foreach (var item in especialidades)
-            {
-                cmbEspecialidad.Items.Add(item.Descripcion);
-            }
+        private async void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Inscripcion inscripcion = new Inscripcion();
+            Curso curso = (Curso)cursosDataGridView.SelectedRows[0].DataBoundItem;
+            inscripcion.IdAlumno = persona.Legajo;
+            inscripcion.IdCurso = curso.CursoId;
+            int ins_id = await InscripcionesApiClient.AddAsync(inscripcion);
+            Inscripcion buffer = await InscripcionesApiClient.GetAsync(ins_id);
+            persona.CursosAlumno.Add(buffer);
+            curso.Alumnos.Add(buffer);
+            PersonasApiClient.UpdateAsync(persona);
+            CursosApiClient.UpdateAsync(curso);
+
         }
     }
 }

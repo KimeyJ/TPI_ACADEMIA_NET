@@ -83,6 +83,51 @@ app.MapDelete("/especialidades/{id}", (int id) =>
 .WithName("DeleteEspecialidad")
 .WithOpenApi();
 
+app.MapGet("/inscripciones/{id}", (int id) =>
+{
+    InscripcionService inscripcionService = new InscripcionService();
+
+    return inscripcionService.Get(id);
+})
+.WithName("GetInscripciones")
+.WithOpenApi();
+
+app.MapGet("/inscripciones/{t_id}/{id}", (bool t_id, int id) =>
+{
+    InscripcionService inscripcionService = new InscripcionService();
+
+    return inscripcionService.GetAll(id, t_id);
+})
+.WithName("GetAllInscripciones")
+.WithOpenApi();
+
+app.MapPost("/inscripciones", (Inscripcion inscripcion) =>
+{
+    InscripcionService inscripcionService = new InscripcionService();
+
+    return inscripcionService.Add(inscripcion);
+})
+.WithName("AddInscripcion")
+.WithOpenApi();
+
+app.MapPut("/inscripciones", (Inscripcion inscripcion) =>
+{
+    InscripcionService inscripcionService = new InscripcionService();
+
+    inscripcionService.Update(inscripcion);
+})
+.WithName("UpdateInscripcion")
+.WithOpenApi();
+
+app.MapDelete("/inscripciones/{id}", (int id) =>
+{
+    InscripcionService inscripcionService = new InscripcionService();
+
+    inscripcionService.Delete(id);
+})
+.WithName("DeleteInscripcion")
+.WithOpenApi();
+
 app.MapGet("/personas/{id}", (int id) =>
 {
     PersonaService personaService = new PersonaService();
@@ -126,6 +171,51 @@ app.MapDelete("/personas/{id}", (int id) =>
     personaService.Delete(id);
 })
 .WithName("DeletePersona")
+.WithOpenApi();
+
+app.MapGet("/docente_cursos/{id}", (int id) =>
+{
+    DocenteCursoService docentecursoservice = new DocenteCursoService();
+
+    return docentecursoservice.Get(id);
+})
+.WithName("GetDocenteCurso")
+.WithOpenApi();
+
+app.MapGet("/docente_cursos/all/", () =>
+{
+    DocenteCursoService docentecursoservice = new DocenteCursoService();
+
+    return docentecursoservice.GetAll();
+})
+.WithName("GetAllDocenteCurso")
+.WithOpenApi();
+
+app.MapPost("/docente_cursos", (Docente_Curso Docente_Curso) =>
+{
+    DocenteCursoService docentecursoservice = new DocenteCursoService();
+
+    return docentecursoservice.Add(Docente_Curso);
+})
+.WithName("AddDocenteCurso")
+.WithOpenApi();
+
+app.MapPut("/docente_cursos", (Docente_Curso Docente_Curso) =>
+{
+    DocenteCursoService docentecursoservice = new DocenteCursoService();
+
+    docentecursoservice.Update(Docente_Curso);
+})
+.WithName("UpdateDocenteCurso")
+.WithOpenApi();
+
+app.MapDelete("/docente_cursos/{id}", (int id) =>
+{
+    DocenteCursoService docentecursoservice = new DocenteCursoService();
+
+    docentecursoservice.Delete(id);
+})
+.WithName("DeleteDocenteCurso")
 .WithOpenApi();
 
 app.MapGet("/usuarios/{id}", (int id) =>
@@ -374,7 +464,7 @@ app.MapPost("/cursos", (Curso curso) =>
 {
     CursoService cursoService = new CursoService();
 
-    cursoService.Add(curso);
+    return cursoService.Add(curso);
 })
 .WithName("AddCurso")
 .WithOpenApi();

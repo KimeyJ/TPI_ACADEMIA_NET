@@ -1,4 +1,5 @@
 using Domain.Model;
+using form_main.APIs;
 using form_main.WindowsForm;
 using WindowsForms;
 
@@ -108,9 +109,10 @@ namespace form_main
             nuevaConsulta.Show();
         }
 
-        private void anotarseAUnCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void inscripcionACursadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmInscripcion nuevaInscripcion = new frmInscripcion();
+            nuevaInscripcion.persona = personaActual;
             nuevaInscripcion.MdiParent = this;
             nuevaInscripcion.Show();
         }

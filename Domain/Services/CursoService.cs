@@ -1,4 +1,5 @@
 ﻿using Domain.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,14 @@ namespace Domain.Services
     public class CursoService
     {
         //private readonly AcademiaContext _context;
-        public void Add(Curso Curso)
+        public int Add(Curso Curso)
         {
             using (var _context = new AcademiaContext())
             {
                 _context.Cursos.Add(Curso);
                 _context.SaveChanges();
+
+                return Curso.CursoId;
             }
 
         }
@@ -58,14 +61,14 @@ namespace Domain.Services
             }
         }
 
-        public IEnumerable<Curso> GetAllByPlan(int id_pl)
+        public IEnumerable<Curso> GetAllByPlan(int id)
         {
-            using (var _context = new AcademiaContext())
+            using(var _context = new AcademiaContext())
             {
                 var rta = _context.Cursos.ToList();
-                return from c in rta where c.Comision.IdPlan == id_pl && c.Materia.IdPlan == id_pl select c;
-
+                return from c in rta where c.Materia.IdPlan == id select c;
             }
+            
         }
 
         public void Update(Curso Curso)
