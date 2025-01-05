@@ -30,6 +30,9 @@ namespace form_main
         {
             PersonasApiClient client = new PersonasApiClient();
             personaActual = await PersonasApiClient.GetAsync(usuarioActual.IdPersona);
+            switch(personaActual.Tipo_persona)
+            {
+            }
         }
 
         private void materiasDelPlanToolStripMenuItem_Click(object sender, EventArgs e)

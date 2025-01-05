@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pHG5X+E8RdA=",
+  "dgSpecHash": "FpIY5i2cN6qQ92dYIEE5lg05LcDMJfdQ9O4jtwrC87Lx1mdOwssHVwQyOB1eeUQcAeJkUY7oqVLL/EcGxHs/2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Octavio\\Documents\\Desarrollo IDE\\Net\\TPI_ACADEMIA_NET\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\Octavio\\Documents\\Desarollo de Software\\TPI_ACADEMIA_NET\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Octavio\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Octavio\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

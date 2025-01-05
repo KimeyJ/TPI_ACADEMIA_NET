@@ -29,13 +29,16 @@ namespace form_main.WindowsForm
 
             if (editMode)
             {
-                AsignarDocentes(curso.CursoId);
+                AsignarDocente(curso.CursoId, ((Persona)profDataGridView.SelectedRows[0].DataBoundItem).Legajo, 1);
+                AsignarDocente(curso.CursoId, ((Persona)profDataGridView1.SelectedRows[0].DataBoundItem).Legajo, 2);
+                await CursosApiClient.UpdateAsync(curso);
             }
             else
             {
                 int idCurso = await CursosApiClient.AddAsync(curso);
-                AsignarDocentes(idCurso);
-               
+                AsignarDocente(idCurso, ((Persona)profDataGridView.SelectedRows[0].DataBoundItem).Legajo, 1);
+                AsignarDocente(idCurso, ((Persona)profDataGridView1.SelectedRows[0].DataBoundItem).Legajo, 2);
+
             }
 
 
@@ -56,25 +59,24 @@ namespace form_main.WindowsForm
                 //profDataGridView.SelectedRows.Equals(curso.Profesores[0]);
                 //profDataGridView1.SelectedRows.Equals(curso.Profesores[1]);
             }
-            
+
         }
 
-        private async void AsignarDocentes(int id)
+        private async void AsignarDocente(int idCurso, int idDocente, int cargo)
         {
             Docente_Curso docente_Curso = new Docente_Curso();
-            docente_Curso.IdDocente = ((Persona)profDataGridView.SelectedRows[0].DataBoundItem).Legajo;
-            docente_Curso.IdCurso = id;
-            docente_Curso.Cargo = 1;
+            
+            docente_Curso.IdDocente = idDocente;
+            docente_Curso.IdCurso = idCurso;
+            docente_Curso.Cargo = cargo;
             int id1 = await DocentesCursosApiClient.AddAsync(docente_Curso);
-            docente_Curso.IdDocente = ((Persona)profDataGridView1.SelectedRows[0].DataBoundItem).Legajo;
-            docente_Curso.Cargo = 2;
-            int id2 = await DocentesCursosApiClient.AddAsync(docente_Curso);
 
-            Docente_Curso buffer = await DocentesCursosApiClient.GetAsync(id1);
-            curso.Profesores.Add(buffer);
-            buffer = await DocentesCursosApiClient.GetAsync(id2);
-            curso.Profesores.Add(buffer);
-            await CursosApiClient.UpdateAsync(curso);
+            curso.Profesores.Append(await DocentesCursosApiClient.GetAsync(id1));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(((Persona)profDataGridView1.SelectedRows[0].DataBoundItem).Legajo.ToString());
         }
     }
 }
