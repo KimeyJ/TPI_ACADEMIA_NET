@@ -30,16 +30,17 @@ namespace form_main.APIs
             return docente_curso;
         }
 
-        public static async Task<IEnumerable<Docente_Curso>> GetAllAsync()
+        public static async Task<IEnumerable<Docente_Curso>> GetAllAsync(int id, bool tp)
         {
             IEnumerable<Docente_Curso> docente_cursos = null;
-            HttpResponseMessage response = await client.GetAsync("docente_cursos/all/");
+            HttpResponseMessage response = await client.GetAsync("docente_cursos/group/" + id + "/" + tp);
             if (response.IsSuccessStatusCode)
             {
                 docente_cursos = await response.Content.ReadAsAsync<IEnumerable<Docente_Curso>>();
             }
             return docente_cursos;
         }
+
         public async static Task<int> AddAsync(Docente_Curso docente_curso)
         {
             int id = 0;

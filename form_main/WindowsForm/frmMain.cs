@@ -30,7 +30,7 @@ namespace form_main
         {
             PersonasApiClient client = new PersonasApiClient();
             personaActual = await PersonasApiClient.GetAsync(usuarioActual.IdPersona);
-            switch(personaActual.Tipo_persona)
+            switch (personaActual.Tipo_persona)
             {
             }
         }
@@ -118,6 +118,14 @@ namespace form_main
             nuevaInscripcion.persona = personaActual;
             nuevaInscripcion.MdiParent = this;
             nuevaInscripcion.Show();
+        }
+
+        private void notasExamenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCursoConsulta nuevaConsulta = new frmCursoConsulta();
+            nuevaConsulta.docente = personaActual;
+            nuevaConsulta.MdiParent= this;
+            nuevaConsulta.Show();
         }
     }
 }

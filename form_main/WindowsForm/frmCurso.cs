@@ -19,6 +19,7 @@ namespace form_main.WindowsForm
             InitializeComponent();
         }
         public Curso curso = new Curso();
+        public IEnumerable<Docente_Curso> docentes;
         public bool editMode = false;
         private async void button1_Click(object sender, EventArgs e)
         {
@@ -29,21 +30,27 @@ namespace form_main.WindowsForm
 
             if (editMode)
             {
-                AsignarDocente(curso.CursoId, ((Persona)profDataGridView.SelectedRows[0].DataBoundItem).Legajo, 1);
-                AsignarDocente(curso.CursoId, ((Persona)profDataGridView1.SelectedRows[0].DataBoundItem).Legajo, 2);
                 await CursosApiClient.UpdateAsync(curso);
+                if (docentes.First().IdDocente != ((Persona)profDataGridView.SelectedRows[0].DataBoundItem).Legajo)
+                {
+                    await DocentesCursosApiClient.DeleteAsync(docentes.First().IdDocente);
+                    AsignarDocente(curso.CursoId, ((Persona)profDataGridView.SelectedRows[0].DataBoundItem).Legajo, 1);
+                }
+                if(docentes.Last().IdDocente != ((Persona)profDataGridView1.SelectedRows[0].DataBoundItem).Legajo)
+                {
+                    await DocentesCursosApiClient.DeleteAsync(docentes.Last().IdDocente);
+                    AsignarDocente(curso.CursoId, ((Persona)profDataGridView1.SelectedRows[0].DataBoundItem).Legajo, 2);
+                }
             }
             else
             {
                 int idCurso = await CursosApiClient.AddAsync(curso);
                 AsignarDocente(idCurso, ((Persona)profDataGridView.SelectedRows[0].DataBoundItem).Legajo, 1);
                 AsignarDocente(idCurso, ((Persona)profDataGridView1.SelectedRows[0].DataBoundItem).Legajo, 2);
-
             }
 
-
-
             this.Dispose();
+
         }
 
         private async void frmCurso_Load(object sender, EventArgs e)
@@ -56,8 +63,9 @@ namespace form_main.WindowsForm
                 textBox2.Text = curso.Cupo.ToString();
                 textBox1.Text = curso.Nombre;
                 richTextBox1.Text = curso.Descripcion;
-                //profDataGridView.SelectedRows.Equals(curso.Profesores[0]);
-                //profDataGridView1.SelectedRows.Equals(curso.Profesores[1]);
+                docentes = await DocentesCursosApiClient.GetAllAsync(curso.CursoId, true);
+                profDataGridView.SelectedRows.Equals(docentes.First());
+                profDataGridView1.SelectedRows.Equals(docentes.Last());
             }
 
         }
@@ -69,14 +77,7 @@ namespace form_main.WindowsForm
             docente_Curso.IdDocente = idDocente;
             docente_Curso.IdCurso = idCurso;
             docente_Curso.Cargo = cargo;
-            int id1 = await DocentesCursosApiClient.AddAsync(docente_Curso);
-
-            curso.Profesores.Append(await DocentesCursosApiClient.GetAsync(id1));
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(((Persona)profDataGridView1.SelectedRows[0].DataBoundItem).Legajo.ToString());
+            await DocentesCursosApiClient.AddAsync(docente_Curso);
         }
     }
 }

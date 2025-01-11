@@ -44,7 +44,7 @@ namespace Domain.Services
 
         }
 
-        public IEnumerable<Inscripcion> GetAll(int id, bool tipoId)
+        public IEnumerable<Inscripcion> GetAll(int id, bool tipoId) // True: Devuelve por Alumno False: Devuelve por Curso
         {
             using (var _context = new AcademiaContext())
             {

@@ -32,7 +32,7 @@ namespace Domain.Services
                 }
             }
         }
-        public Materia? Get(int id, int id_p)
+        public Materia? Get(int id)
         {
             using (var _context = new AcademiaContext())
             {

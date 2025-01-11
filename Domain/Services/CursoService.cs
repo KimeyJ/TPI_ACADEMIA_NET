@@ -66,7 +66,15 @@ namespace Domain.Services
             using(var _context = new AcademiaContext())
             {
                 var rta = _context.Cursos.ToList();
-                return from c in rta where c.Materia.IdPlan == id select c;
+                foreach (Curso curso in rta)
+                {
+                    Materia materia = _context.Materias.Find(curso.IdMateria);
+                    if (materia.IdPlan != id)
+                    {
+                        rta.Remove(curso);
+                    }
+                }
+                return rta;
             }
             
         }

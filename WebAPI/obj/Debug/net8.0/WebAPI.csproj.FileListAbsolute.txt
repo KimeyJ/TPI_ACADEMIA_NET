@@ -163,3 +163,4 @@ C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\WebAPI\obj\Deb
 C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\WebAPI\obj\Debug\net8.0\WebAPI.pdb
 C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\WebAPI\obj\Debug\net8.0\WebAPI.genruntimeconfig.cache
 C:\Users\Octavio\Documents\Desarollo de Software\TPI_ACADEMIA_NET\WebAPI\obj\Debug\net8.0\ref\WebAPI.dll
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs

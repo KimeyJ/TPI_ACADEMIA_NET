@@ -19,10 +19,10 @@ namespace form_main.APIs
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public static async Task<Materia> GetAsync(int id, int id_p)
+        public static async Task<Materia> GetAsync(int id)
         {
             Materia materia = null;
-            HttpResponseMessage response = await client.GetAsync("materias/" + id + "/" + id_p);
+            HttpResponseMessage response = await client.GetAsync("materias/" + id);
             if (response.IsSuccessStatusCode)
             {
                 materia = await response.Content.ReadAsAsync<Materia>();

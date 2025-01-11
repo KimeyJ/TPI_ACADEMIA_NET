@@ -160,6 +160,7 @@
             notasExamenToolStripMenuItem.Name = "notasExamenToolStripMenuItem";
             notasExamenToolStripMenuItem.Size = new Size(209, 22);
             notasExamenToolStripMenuItem.Text = "Notas Examen";
+            notasExamenToolStripMenuItem.Click += notasExamenToolStripMenuItem_Click;
             // 
             // estadoAcadémicoToolStripMenuItem
             // 

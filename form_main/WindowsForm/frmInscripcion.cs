@@ -26,8 +26,18 @@ namespace form_main.WindowsForm
         private async void frmInscripcion_Load(object sender, EventArgs e)
         {
             this.cursosDataGridView.DataSource = null;
-            cursos = (List<Curso>)await CursosApiClient.GetAllByPlanAsync(persona.IdPlan);
-            this.cursosDataGridView.DataSource = from c in cursos where c.Cupo > 0 select c;
+            List<Curso> buffer = (List<Curso>)await CursosApiClient.GetAllAsync(0, 0);
+            cursos = new List<Curso>();
+
+            foreach (Curso curso in buffer)
+            {
+                Materia materia = await MateriasApiClient.GetAsync(curso.IdMateria);
+                if (materia.IdPlan == persona.IdPlan && curso.Cupo > 0)
+                {
+                    cursos.Add(curso);
+                }
+            }
+            this.cursosDataGridView.DataSource = cursos;
         }
 
         private async void btnAceptar_Click(object sender, EventArgs e)
@@ -36,13 +46,10 @@ namespace form_main.WindowsForm
             Curso curso = (Curso)cursosDataGridView.SelectedRows[0].DataBoundItem;
             inscripcion.IdAlumno = persona.Legajo;
             inscripcion.IdCurso = curso.CursoId;
+            MessageBox.Show(curso.CursoId.ToString());
             int ins_id = await InscripcionesApiClient.AddAsync(inscripcion);
-            Inscripcion buffer = await InscripcionesApiClient.GetAsync(ins_id);
-            persona.CursosAlumno.Add(buffer);
-            curso.Alumnos.Add(buffer);
-            PersonasApiClient.UpdateAsync(persona);
-            CursosApiClient.UpdateAsync(curso);
 
+            this.Dispose();
         }
     }
 }

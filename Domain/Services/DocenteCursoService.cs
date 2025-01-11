@@ -43,13 +43,23 @@ namespace Domain.Services
 
         }
 
-        public IEnumerable<Docente_Curso> GetAll()
+        public IEnumerable<Docente_Curso> GetAll(int id, bool tp) //True: Devuelve por Curso False: Devuelve por Docente
         {
             using (var _context = new AcademiaContext())
             {
-                return _context.Docentes_Cursos.ToList();
+                var rta = _context.Docentes_Cursos.ToList();
+                if (tp)
+                {
+                    return from dc in rta where dc.IdCurso == id select dc;
+                }
+                else
+                {
+                    return from dc in rta where dc.IdDocente == id select dc;
+                }
+                
             }
         }
+
         public void Update(Docente_Curso Docente_Curso)
         {
             using (var _context = new AcademiaContext())

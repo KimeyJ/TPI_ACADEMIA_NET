@@ -182,11 +182,11 @@ app.MapGet("/docente_cursos/{id}", (int id) =>
 .WithName("GetDocenteCurso")
 .WithOpenApi();
 
-app.MapGet("/docente_cursos/all/", () =>
+app.MapGet("/docente_cursos/all/{id}/{tp}", (int id, bool tp) =>
 {
     DocenteCursoService docentecursoservice = new DocenteCursoService();
 
-    return docentecursoservice.GetAll();
+    return docentecursoservice.GetAll(id, tp);
 })
 .WithName("GetAllDocenteCurso")
 .WithOpenApi();
@@ -343,11 +343,11 @@ app.MapDelete("/planes/{id}", (int id) =>
 .WithName("DeletePlan")
 .WithOpenApi();
 
-app.MapGet("/materias/{id}/{id_p}", (int id, int id_p) =>
+app.MapGet("/materias/{id}/", (int id) =>
 {
     MateriaService materiaService = new MateriaService();
 
-    return materiaService.Get(id, id_p);
+    return materiaService.Get(id);
 })
 .WithName("GetMaterias")
 .WithOpenApi();
