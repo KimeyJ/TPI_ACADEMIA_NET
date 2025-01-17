@@ -1,0 +1,54 @@
+﻿@page
+@model WebUI.Pages.Materias.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Materia[0].Plan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Materia[0].Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Materia[0].HsSemanales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Materia[0].HsTotales)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Materia) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plan.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HsSemanales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HsTotales)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.MateriaId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.MateriaId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.MateriaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

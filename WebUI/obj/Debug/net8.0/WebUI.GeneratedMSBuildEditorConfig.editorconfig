@@ -1,0 +1,243 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebUI
+build_property.RootNamespace = WebUI
+build_property.ProjectDir = C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebUI\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebUI
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Comisiones/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taXNpb25lc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Comisiones/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taXNpb25lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Comisiones/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taXNpb25lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Comisiones/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taXNpb25lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Comisiones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taXNpb25lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Cursos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vyc29zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Cursos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vyc29zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Cursos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vyc29zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Cursos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vyc29zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Cursos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vyc29zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/DocentesCursos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZXNDdXJzb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/DocentesCursos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZXNDdXJzb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/DocentesCursos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZXNDdXJzb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/DocentesCursos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZXNDdXJzb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/DocentesCursos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZXNDdXJzb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Especialidades/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXNwZWNpYWxpZGFkZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Especialidades/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXNwZWNpYWxpZGFkZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Especialidades/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXNwZWNpYWxpZGFkZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Especialidades/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXNwZWNpYWxpZGFkZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Especialidades/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXNwZWNpYWxpZGFkZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Inscripciones/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zY3JpcGNpb25lc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Inscripciones/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zY3JpcGNpb25lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Inscripciones/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zY3JpcGNpb25lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Inscripciones/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zY3JpcGNpb25lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Inscripciones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zY3JpcGNpb25lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Mainboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbmJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Materias/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWF0ZXJpYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Materias/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWF0ZXJpYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Materias/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWF0ZXJpYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Materias/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWF0ZXJpYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Materias/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWF0ZXJpYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Personas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Personas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Personas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Personas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Personas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Planes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxhbmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Planes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxhbmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Planes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxhbmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Planes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxhbmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Planes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxhbmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Usuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Usuarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Usuarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Usuarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Usuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-l9yroajyng

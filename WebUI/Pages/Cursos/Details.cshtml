@@ -1,0 +1,55 @@
+﻿@page
+@model WebUI.Pages.Cursos.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Curso</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Curso.Materia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Curso.Materia.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Curso.Comision)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Curso.Comision.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Curso.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Curso.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Curso.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Curso.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Curso.Cupo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Curso.Cupo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Curso.AñoCalendario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Curso.AñoCalendario)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Curso.CursoId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
