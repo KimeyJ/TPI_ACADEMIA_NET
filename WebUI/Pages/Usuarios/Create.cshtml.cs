@@ -13,16 +13,9 @@ namespace WebUI.Pages.Usuarios
 {
     public class CreateModel : PageModel
     {
-        IEnumerable<Persona> personas;
-
-        public async void GetPersonas()
+        public async Task<IActionResult> OnGet()
         {
-            personas = await PersonasApiClient.GetAllAsync(0);
-        }
-
-        public IActionResult OnGet()
-        {
-        ViewData["IdPersona"] = new SelectList(personas, "Legajo", "Apellido");
+        ViewData["IdPersona"] = new SelectList(await PersonasApiClient.GetAllAsync(0), "Legajo", "Apellido");
             return Page();
         }
 
@@ -32,11 +25,6 @@ namespace WebUI.Pages.Usuarios
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             await UsuariosApiClient.AddAsync(Usuario);
 
             return RedirectToPage("./Index");

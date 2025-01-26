@@ -14,16 +14,9 @@ namespace WebUI.Pages.Materias
 {
     public class CreateModel : PageModel
     {
-        IEnumerable<Plan> planes;
-
-        public async void GetPlanes()
+        public async Task<IActionResult> OnGet()
         {
-            planes = await PlanesApiClient.GetAllAsync(0);
-        }
-
-        public IActionResult OnGet()
-        {
-        ViewData["IdPlan"] = new SelectList(planes, "PlanId", "Descripcion");
+        ViewData["IdPlan"] = new SelectList(await PlanesApiClient.GetAllAsync(0), "PlanId", "Descripcion");
             return Page();
         }
 

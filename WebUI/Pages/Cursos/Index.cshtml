@@ -6,10 +6,22 @@
 }
 
 <h1>Index</h1>
+<h2>@Html.Display(Model.plan)</h2>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Nombre:
+            <input type="text" name="filter" value="@Model.filterString" />
+            <input type="hidden" name="id" value="@Model.idPlan">
+            <input type="submit" value="Buscar" class="btn btn-primary" /> |
+            <a asp-page="./Index">Ver lista Completa</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -36,31 +48,35 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Curso) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Materia.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comision.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cupo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AñoCalendario)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.CursoId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.CursoId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.CursoId">Delete</a>
-            </td>
-        </tr>
+            @if ((Model.filterString == null || item.Nombre.Contains(Model.filterString)) && Model.idPlan == item.Materia.IdPlan)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Materia.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comision.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cupo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AñoCalendario)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.CursoId">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.CursoId">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.CursoId">Delete</a>
+                    </td>
+                </tr>
+            }
+            
 }
     </tbody>
 </table>

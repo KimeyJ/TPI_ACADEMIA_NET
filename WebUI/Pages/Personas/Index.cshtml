@@ -10,9 +10,34 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            <input type="hidden" name="plan" value="@Model.planFilter" />
+            Legajo:
+            <input type="text" name="id" value="@Model.idFilter" />
+            Apellido:
+            <input type="text" name="apellido" value="@Model.apelFilter" />
+            Direccion:
+            <input type="text" name="direccion" value="@Model.dirFilter" />
+            Categoria:
+            <select name="categoria" >
+                <option selected="selected" value="0">Todos</option>
+                <option value="1">Alumno</option>
+                <option value="2">Profesor</option>
+                <option value="3">Administrador</option>
+            </select>
+            <input type="submit" value="Buscar" class="btn btn-primary" /> |
+            <a asp-page="./Index">Ver lista Completa</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Persona[0].Legajo)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Persona[0].Nombre)
             </th>
@@ -42,37 +67,51 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Persona) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Direccion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha_nac)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo_persona)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdPlan)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Legajo">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Legajo">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Legajo">Delete</a>
-            </td>
-        </tr>
+            @if ((Model.idFilter == 0 || (item.Legajo.ToString()).Contains(Model.idFilter.ToString())) && (Model.planFilter == 0 || item.IdPlan == Model.planFilter) && (Model.apelFilter == null || item.Apellido.ToLower().Contains(Model.apelFilter.ToLower())) && (Model.dirFilter == null || item.Direccion.ToLower().Contains(Model.dirFilter.ToLower())))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Legajo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_nac)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.tipos[item.Tipo_persona - 1])
+                    </td>
+                    <td>
+                        @if (item.IdPlan != 0)
+                        {
+                            @Html.DisplayFor(model => model.Plan.Single(plan => plan.PlanId == item.IdPlan).Descripcion)
+                        }
+                        else
+                        {
+                            @Html.Display("-")
+                        }
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Legajo">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Legajo">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Legajo">Delete</a> |
+                        <a asp-page="../Usuarios/Index" asp-route-id="@item.Legajo">Cuentas</a> |
+                    </td>
+                </tr>
+            }
 }
     </tbody>
 </table>

@@ -26,6 +26,7 @@ namespace WebUI.Pages.Materias
             }
 
             var materia = await MateriasApiClient.GetAsync((int)id);
+            materia.Plan = await PlanesApiClient.GetAsync(materia.IdPlan);
 
             if (materia == null)
             {

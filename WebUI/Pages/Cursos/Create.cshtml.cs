@@ -13,20 +13,10 @@ namespace WebUI.Pages.Cursos
 {
     public class CreateModel : PageModel
     {
-        IEnumerable<Comision> comisiones;
-        IEnumerable<Materia> materias;
-
-        public async void GetComMat()
+        public async Task<IActionResult> OnGetAsync()
         {
-            comisiones = await ComisionesApiClient.GetAllAsync(0);
-            materias = await MateriasApiClient.GetAllAsync(0);
-        }
-
-        public IActionResult OnGet()
-        {
-            GetComMat();
-        ViewData["IdComision"] = new SelectList(comisiones, "ComisionId", "Descripcion");
-        ViewData["IdMateria"] = new SelectList(materias, "MateriaId", "Descripcion");
+        ViewData["IdComision"] = new SelectList(await ComisionesApiClient.GetAllAsync(0), "ComisionId", "Descripcion");
+        ViewData["IdMateria"] = new SelectList(await MateriasApiClient.GetAllAsync(0), "MateriaId", "Descripcion");
             return Page();
         }
 

@@ -15,6 +15,8 @@ namespace WebUI.Pages.Personas
     {
 
         public Persona Persona { get; set; } = default!;
+        public Plan Plan { get; set; } = default!;
+        public string[] tipos = ["Alumno", "Profesor", "Administrador"];
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -24,6 +26,7 @@ namespace WebUI.Pages.Personas
             }
 
             var persona = await PersonasApiClient.GetAsync((int)id);
+        
             if (persona == null)
             {
                 return NotFound();
@@ -31,6 +34,7 @@ namespace WebUI.Pages.Personas
             else
             {
                 Persona = persona;
+                Plan = await PlanesApiClient.GetAsync(persona.IdPlan);
             }
             return Page();
         }

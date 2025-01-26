@@ -51,13 +51,13 @@
             @Html.DisplayNameFor(model => model.Persona.Tipo_persona)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Persona.Tipo_persona)
+            @Html.DisplayFor(model => Model.tipos[Model.Persona.Tipo_persona - 1])
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Persona.IdPlan)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Persona.IdPlan)
+            @Html.DisplayFor(model => model.Plan.Descripcion)
         </dd>
     </dl>
 </div>

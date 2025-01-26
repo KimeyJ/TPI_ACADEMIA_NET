@@ -1,6 +1,17 @@
 ﻿@page "{id:int}"
 @model WebUI.Pages.MainboardModel
 @{
-	<h1>Bienvenido @Model.persona.Nombre @Model.persona.Apellido</h1>
+	<h1>Te damos la Bienvenida, @Model.Persona.Nombre @Model.Persona.Apellido</h1>
+	<div class="text-center">
+		<p>Que Desea Hacer?</p>
+		<div class="dropdown">
+			<button class="dropbtn">Institucional</button>
+			<div class="dropdown-content">
+				<a asp-page="/Especialidades/Index">Especialidades</a>
+				<a asp-page="/Planes/Index">Planes</a>
+				<a asp-page="/Materias/Index">Materias</a>
+			</div>
+			</div>
+	</div>
 }
 

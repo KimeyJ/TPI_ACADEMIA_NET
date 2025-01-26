@@ -10,6 +10,17 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Nombre:
+            <input type="text" name="filter" value="@Model.filterString" />
+            <input type="hidden" name="id" value="@Model.idEsp">
+            <input type="submit" value="Buscar" class="btn btn-primary" /> |
+            <a asp-page="./Index" asp-route-id="@Model.idEsp">Ver lista Completa</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -27,22 +38,30 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Plan) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Especialidad.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Año)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.PlanId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.PlanId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.PlanId">Delete</a>
-            </td>
-        </tr>
+            @if (Model.filterString == null || item.Descripcion.Contains(Model.filterString))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Especialidad.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Año)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.PlanId">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.PlanId">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.PlanId">Delete</a> |
+                        <a asp-page="../Materias/Index" asp-route-id="@item.PlanId">Materias</a> |
+                        <a asp-page="../Comisiones/Index" asp-route-id="@item.PlanId">Comisiones</a> |
+                        <a asp-page="../Cursos/Index" asp-route-id="@item.PlanId">Cursos</a> |
+                        <a asp-page="../Personas/Index" asp-route-plan="@item.PlanId">Inscriptos</a>
+                    </td>
+                </tr>
+            }
+            
 }
     </tbody>
 </table>

@@ -44,15 +44,15 @@
                 <span asp-validation-for="Persona.Fecha_nac" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Persona.Tipo_persona" class="control-label"></label>
-                <input asp-for="Persona.Tipo_persona" class="form-control" />
-                <span asp-validation-for="Persona.Tipo_persona" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Persona.IdPlan" class="control-label"></label>
-                <input asp-for="Persona.IdPlan" class="form-control" />
-                <span asp-validation-for="Persona.IdPlan" class="text-danger"></span>
-            </div>
+                <select asp-for="Persona.IdPlan" class="form-control" asp-items="ViewBag.IdPlan"></select>
+			</div>
+            <label class="control-label">TipoPersona</label>
+            <select name="tipo" class="form-control">
+                <option selected="selected" value="1">Alumno</option>
+                <option value="2">Profesor</option>
+                <option value="3">Administrador</option>
+            </select>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

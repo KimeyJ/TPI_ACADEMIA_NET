@@ -13,18 +13,10 @@ namespace WebUI.Pages.DocentesCursos
 {
     public class CreateModel : PageModel
     {
-        IEnumerable<Curso> cursos;
-        IEnumerable<Persona> profesores;
-
-        public async void GetCurProf()
+        public async Task<IActionResult> OnGet()
         {
-            cursos = await CursosApiClient.GetAllAsync(0, 0);
-            profesores = await PersonasApiClient.GetAllAsync(2);
-        }
-        public IActionResult OnGet()
-        {
-        ViewData["IdCurso"] = new SelectList(cursos, "CursoId", "Descripcion");
-        ViewData["IdDocente"] = new SelectList(profesores, "Legajo", "Apellido");
+        ViewData["IdCurso"] = new SelectList(await CursosApiClient.GetAllAsync(0, 0), "CursoId", "Descripcion");
+        ViewData["IdDocente"] = new SelectList(await PersonasApiClient.GetAllAsync(2), "Legajo", "Apellido");
             return Page();
         }
 

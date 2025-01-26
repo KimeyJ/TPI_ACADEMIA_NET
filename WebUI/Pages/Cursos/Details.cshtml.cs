@@ -24,6 +24,8 @@ namespace WebUI.Pages.Cursos
             }
 
             var curso = await CursosApiClient.GetAsync((int)id);
+            curso.Comision = await ComisionesApiClient.GetAsync(curso.IdComision);
+            curso.Materia = await MateriasApiClient.GetAsync(curso.IdMateria);
             if (curso == null)
             {
                 return NotFound();

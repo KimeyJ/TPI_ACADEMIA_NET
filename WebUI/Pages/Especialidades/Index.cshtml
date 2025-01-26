@@ -10,6 +10,16 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Nombre:
+            <input type="text" name="filter" value="@Model.filterString" />
+            <input type="submit" value="Buscar" class="btn btn-primary" /> |
+            <a asp-page="./Index">Ver lista Completa</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -21,16 +31,20 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Especialidad) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.EspecialidadId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.EspecialidadId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.EspecialidadId">Delete</a>
-            </td>
-        </tr>
+            @if (Model.filterString == null || item.Descripcion.Contains(Model.filterString))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.EspecialidadId">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.EspecialidadId">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.EspecialidadId">Delete</a> |
+                        <a asp-page="../Planes/Index" asp-route-id="@item.EspecialidadId">Planes</a>
+                    </td>
+                </tr>
+            }   
 }
     </tbody>
 </table>

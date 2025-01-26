@@ -19,10 +19,10 @@ namespace WebUI.Pages.Comisiones
         {
             planes = await PlanesApiClient.GetAllAsync(0);
         }
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGet()
         {
-            GetPlanes();
-        ViewData["IdPlan"] = new SelectList(planes, "PlanId", "Descripcion");
+            //GetPlanes();
+        ViewData["IdPlan"] = new SelectList(await PlanesApiClient.GetAllAsync(0), "PlanId", "Descripcion");
             return Page();
         }
 
@@ -32,10 +32,6 @@ namespace WebUI.Pages.Comisiones
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
 
             await ComisionesApiClient.AddAsync(Comision);
 

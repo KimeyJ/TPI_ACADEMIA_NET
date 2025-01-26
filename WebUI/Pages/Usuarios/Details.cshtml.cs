@@ -24,6 +24,7 @@ namespace WebUI.Pages.Usuarios
             }
 
             var usuario = await UsuariosApiClient.GetAsync((int)id);
+            usuario.Persona = await PersonasApiClient.GetAsync(usuario.IdPersona);
             if (usuario == null)
             {
                 return NotFound();

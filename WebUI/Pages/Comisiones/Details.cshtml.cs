@@ -15,6 +15,7 @@ namespace WebUI.Pages.Comisiones
     {
 
         public Comision Comision { get; set; } = default!;
+        public Plan plan { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -24,6 +25,8 @@ namespace WebUI.Pages.Comisiones
             }
 
             var comision = await ComisionesApiClient.GetAsync((int)id);
+            comision.Plan = await PlanesApiClient.GetAsync(comision.IdPlan);
+
             if (comision == null)
             {
                 return NotFound();

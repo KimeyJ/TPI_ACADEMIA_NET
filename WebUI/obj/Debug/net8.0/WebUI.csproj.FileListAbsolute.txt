@@ -264,3 +264,4 @@ C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebUI\obj\Debug\n
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebUI\obj\Debug\net8.0\WebUI.pdb
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebUI\obj\Debug\net8.0\WebUI.genruntimeconfig.cache
 C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebUI\obj\Debug\net8.0\ref\WebUI.dll
+C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebUI\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout1.cshtml.rz.scp.css

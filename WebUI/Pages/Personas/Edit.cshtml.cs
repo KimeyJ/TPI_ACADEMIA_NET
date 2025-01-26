@@ -17,6 +17,8 @@ namespace WebUI.Pages.Personas
 
         [BindProperty]
         public Persona Persona { get; set; } = default!;
+        [BindProperty]
+        public string Tipos { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,6 +32,7 @@ namespace WebUI.Pages.Personas
             {
                 return NotFound();
             }
+            ViewData["IdPlan"] = new SelectList(await PlanesApiClient.GetAllAsync(0), "PlanId", "Descripcion");
             Persona = persona;
             return Page();
         }
@@ -38,6 +41,7 @@ namespace WebUI.Pages.Personas
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            Persona.Tipo_persona = Convert.ToInt32(Tipos);
             await PersonasApiClient.UpdateAsync(Persona);
             return RedirectToPage("./Index");
         }

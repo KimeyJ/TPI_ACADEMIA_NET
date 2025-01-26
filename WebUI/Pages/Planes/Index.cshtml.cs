@@ -15,10 +15,18 @@ namespace WebUI.Pages.Planes
     {
 
         public IList<Plan> Plan { get;set; } = default!;
+        public string filterString;
+        public int idEsp;
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string filter, string id)
         {
-            Plan = (IList<Plan>)await PlanesApiClient.GetAllAsync(0);
+            filterString = filter;
+            idEsp = Convert.ToInt32(id);
+            Plan = (IList<Plan>)await PlanesApiClient.GetAllAsync(idEsp);
+            foreach (var plan in Plan)
+            {
+                plan.Especialidad = await EspecialidadesApiClient.GetAsync(plan.IdEsp);
+            }
         }
     }
 }

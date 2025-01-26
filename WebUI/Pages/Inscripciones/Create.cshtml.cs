@@ -13,19 +13,11 @@ namespace WebUI.Pages.Inscripciones
 {
     public class CreateModel : PageModel
     {
-        IEnumerable<Persona> alumnos;
-        IEnumerable<Curso> cursos;
 
-        public async void GetAlCur()
+        public async Task<IActionResult> OnGet()
         {
-            alumnos = await PersonasApiClient.GetAllAsync(1);
-            cursos = await CursosApiClient.GetAllAsync(0, 0);
-        }
-
-        public IActionResult OnGet()
-        {
-        ViewData["IdAlumno"] = new SelectList(alumnos, "Legajo", "Apellido");
-        ViewData["IdAlumno"] = new SelectList(cursos, "CursoId", "Descripcion");
+        ViewData["IdAlumno"] = new SelectList(await PersonasApiClient.GetAllAsync(1), "Legajo", "Apellido");
+        ViewData["IdAlumno"] = new SelectList(await CursosApiClient.GetAllAsync(0, 0), "CursoId", "Descripcion");
             return Page();
         }
 

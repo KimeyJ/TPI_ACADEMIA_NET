@@ -39,13 +39,6 @@ namespace WebUI.Pages.Comisiones
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            /*if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Attach(Comision).State = EntityState.Modified;*/
-
             await ComisionesApiClient.UpdateAsync(Comision);
 
             return RedirectToPage("./Index");

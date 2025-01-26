@@ -19,6 +19,11 @@ namespace WebUI.Pages.Inscripciones
         public async Task OnGetAsync()
         {
             Inscripcion = (IList<Inscripcion>)await InscripcionesApiClient.GetAllAsync(0,false);
+            foreach (Inscripcion inscripcion in Inscripcion)
+            {
+                inscripcion.Alumno = await PersonasApiClient.GetAsync(inscripcion.IdAlumno);
+                inscripcion.Curso = await CursosApiClient.GetAsync(inscripcion.IdCurso);
+            }
         }
     }
 }

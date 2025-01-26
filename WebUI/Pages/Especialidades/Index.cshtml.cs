@@ -13,17 +13,12 @@ namespace WebUI.Pages.Especialidades
 {
     public class IndexModel : PageModel
     {
-       /* private readonly Domain.AcademiaContext _context;
-
-        public IndexModel(Domain.AcademiaContext context)
-        {
-            _context = context;
-        }*/
-
         public IList<Especialidad> Especialidad { get;set; } = default!;
+        public string filterString;
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string filter)
         {
+            filterString = filter;
             Especialidad = (IList<Especialidad>)await EspecialidadesApiClient.GetAllAsync();
         }
     }

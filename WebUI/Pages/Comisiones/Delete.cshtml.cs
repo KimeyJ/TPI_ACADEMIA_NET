@@ -25,6 +25,7 @@ namespace WebUI.Pages.Comisiones
             }
 
             var comision = await ComisionesApiClient.GetAsync((int)id);
+            comision.Plan = await PlanesApiClient.GetAsync(comision.IdPlan);
 
             if (comision == null)
             {

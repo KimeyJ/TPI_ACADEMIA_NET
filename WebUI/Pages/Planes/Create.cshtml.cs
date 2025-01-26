@@ -13,16 +13,9 @@ namespace WebUI.Pages.Planes
 {
     public class CreateModel : PageModel
     {
-        IEnumerable<Especialidad> especialidades;
-
-        public async void GetEsp()
+        public async Task<IActionResult> OnGet()
         {
-            especialidades = await EspecialidadesApiClient.GetAllAsync();
-        }
-
-        public IActionResult OnGet()
-        {
-        ViewData["IdEsp"] = new SelectList(especialidades, "EspecialidadId", "Descripcion");
+        ViewData["IdEsp"] = new SelectList(await EspecialidadesApiClient.GetAllAsync(), "EspecialidadId", "Descripcion");
             return Page();
         }
 

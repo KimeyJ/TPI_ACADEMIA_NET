@@ -13,18 +13,16 @@ namespace WebUI.Pages.DocentesCursos
 {
     public class IndexModel : PageModel
     {
-        private readonly Domain.AcademiaContext _context;
-
-        public IndexModel(Domain.AcademiaContext context)
-        {
-            _context = context;
-        }
-
         public IList<Docente_Curso> Docente_Curso { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
             Docente_Curso = (IList<Docente_Curso>)await DocentesCursosApiClient.GetAllAsync(0,false);
+            foreach (Docente_Curso docente_curso in Docente_Curso)
+            {
+                docente_curso.Docente = await PersonasApiClient.GetAsync(docente_curso.IdDocente);
+                docente_curso.Curso = await CursosApiClient.GetAsync(docente_curso.IdCurso);
+            }
         }
     }
 }

@@ -10,6 +10,17 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Nombre:
+            <input type="text" name="filter" value="@Model.filterString" />
+            <input type="hidden" name="id" value="@Model.idPersona">
+            <input type="submit" value="Buscar" class="btn btn-primary" /> |
+            <a asp-page="./Index" asp-route-id="@Model.idPersona">Ver lista Completa</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -19,30 +30,28 @@
             <th>
                 @Html.DisplayNameFor(model => model.Usuario[0].Username)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Usuario[0].Password)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Usuario) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona.Apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.UsuarioId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.UsuarioId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.UsuarioId">Delete</a>
-            </td>
-        </tr>
+            @if ((Model.filterString == null || item.Username.Contains(Model.filterString)) && (Model.idPersona == 0 || item.IdPersona == Model.idPersona))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Persona.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.UsuarioId">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.UsuarioId">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.UsuarioId">Delete</a>
+                    </td>
+                </tr>
+            }
+            
 }
     </tbody>
 </table>

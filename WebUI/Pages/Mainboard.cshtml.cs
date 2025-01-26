@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Domain.Model;
 using WebUI.Controllers;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace WebUI.Pages
 {
@@ -9,10 +10,18 @@ namespace WebUI.Pages
     {
         [BindProperty(SupportsGet = true)]
         public int Id { get; set; }
-        public Persona persona { get; set; } = default!;
-        public async void OnGet()
+        public Persona Persona { get; set; } = default!;
+        public async Task<IActionResult> OnGetAsync()
         {
-            persona = await PersonasApiClient.GetAsync(Id);
+            Persona = await PersonasApiClient.GetAsync(Id);
+            if (Persona == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Page();
+            }
         }
     }
 }

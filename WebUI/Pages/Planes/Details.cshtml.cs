@@ -23,6 +23,7 @@ namespace WebUI.Pages.Planes
             }
 
             var plan = await PlanesApiClient.GetAsync((int)id);
+            plan.Especialidad = await EspecialidadesApiClient.GetAsync(plan.IdEsp);
             if (plan == null)
             {
                 return NotFound();
