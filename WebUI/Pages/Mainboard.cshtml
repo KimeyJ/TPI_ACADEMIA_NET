@@ -7,7 +7,7 @@
 		<div class="dropdown">
 			<button class="dropbtn">Institucional</button>
 			<div class="dropdown-content">
-				<a asp-page="/Especialidades/Index">Especialidades</a>
+				<a asp-page="/InscripcionAlumno" asp-route-id="@Model.Persona.Legajo">Inscripcion</a>
 				<a asp-page="/Planes/Index">Planes</a>
 				<a asp-page="/Materias/Index">Materias</a>
 			</div>

@@ -109,6 +109,7 @@
                         <a asp-page="./Details" asp-route-id="@item.Legajo">Details</a> |
                         <a asp-page="./Delete" asp-route-id="@item.Legajo">Delete</a> |
                         <a asp-page="../Usuarios/Index" asp-route-id="@item.Legajo">Cuentas</a> |
+                        <a asp-page="../Inscripciones/Index" asp-route-id="@item.Legajo" asp-route-tipoId="true">Inscripciones</a>
                     </td>
                 </tr>
             }

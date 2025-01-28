@@ -15,10 +15,14 @@ namespace WebUI.Pages.Inscripciones
     {
 
         public IList<Inscripcion> Inscripcion { get;set; } = default!;
+        public int Id;
+        public bool TipoId;
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string id, string tipoId)
         {
-            Inscripcion = (IList<Inscripcion>)await InscripcionesApiClient.GetAllAsync(0,false);
+            Id = Convert.ToInt32(id);
+            TipoId = Convert.ToBoolean(tipoId);
+            Inscripcion = (IList<Inscripcion>)await InscripcionesApiClient.GetAllAsync(Id,TipoId);
             foreach (Inscripcion inscripcion in Inscripcion)
             {
                 inscripcion.Alumno = await PersonasApiClient.GetAsync(inscripcion.IdAlumno);

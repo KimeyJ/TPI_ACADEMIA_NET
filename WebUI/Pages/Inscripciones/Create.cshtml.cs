@@ -27,11 +27,6 @@ namespace WebUI.Pages.Inscripciones
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             await InscripcionesApiClient.AddAsync(Inscripcion);
 
             return RedirectToPage("./Index");

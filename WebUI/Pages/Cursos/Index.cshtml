@@ -48,7 +48,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Curso) {
-            @if ((Model.filterString == null || item.Nombre.Contains(Model.filterString)) && Model.idPlan == item.Materia.IdPlan)
+            @if ((Model.filterString == null || item.Nombre.Contains(Model.filterString)) && (Model.idPlan == 0 || Model.idPlan == item.Materia.IdPlan))
             {
                 <tr>
                     <td>
@@ -72,7 +72,8 @@
                     <td>
                         <a asp-page="./Edit" asp-route-id="@item.CursoId">Edit</a> |
                         <a asp-page="./Details" asp-route-id="@item.CursoId">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.CursoId">Delete</a>
+                        <a asp-page="./Delete" asp-route-id="@item.CursoId">Delete</a> |
+                        <a asp-page="../Inscripciones/Index" asp-route-id="@item.CursoId" asp-route-tipoId="false">Inscriptos</a>
                     </td>
                 </tr>
             }

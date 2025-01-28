@@ -14,10 +14,14 @@ namespace WebUI.Pages.DocentesCursos
     public class IndexModel : PageModel
     {
         public IList<Docente_Curso> Docente_Curso { get;set; } = default!;
+        public int Id;
+        public bool TipoId;
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string id, string tipoId)
         {
-            Docente_Curso = (IList<Docente_Curso>)await DocentesCursosApiClient.GetAllAsync(0,false);
+            Id = Convert.ToInt32(id);
+            TipoId = Convert.ToBoolean(tipoId);
+            Docente_Curso = (IList<Docente_Curso>)await DocentesCursosApiClient.GetAllAsync(Id,TipoId);
             foreach (Docente_Curso docente_curso in Docente_Curso)
             {
                 docente_curso.Docente = await PersonasApiClient.GetAsync(docente_curso.IdDocente);
