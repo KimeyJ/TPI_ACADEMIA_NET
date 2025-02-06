@@ -24,25 +24,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Curso[0].Materia)
+                @Html.DisplayNameFor(model => model.Cursos[0].Materia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Curso[0].Comision)
+                @Html.DisplayNameFor(model => model.Cursos[0].Comision)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Curso[0].Nombre)
+                @Html.DisplayNameFor(model => model.Cursos[0].Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Curso[0].Cupo)
+                @Html.DisplayNameFor(model => model.Cursos[0].Cupo)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Curso)
+        @foreach (var item in Model.Cursos)
         {
 
-            @if ((Model.filterString == null || item.Nombre.Contains(Model.filterString)) && item.AñoCalendario == DateTime.Now.Year && item.Cupo > 0 && Model.idAlumno == item.Materia.IdPlan && !Model.Inscripciones.Any(ins => ins.IdCurso == item.CursoId))
+            @if ((Model.filterString == null || item.Nombre.Contains(Model.filterString)) && item.AñoCalendario == DateTime.Now.Year && item.Cupo > 0 && Model.persona.IdPlan == item.Materia.IdPlan && !Model.Inscripciones.Any(ins => ins.IdCurso == item.CursoId))
             {
                 <tr>
                     <td>
@@ -105,6 +105,8 @@
                             @Html.DisplayFor(model => item.AñoCalendario)
                         </dd>
                         <form method="post">
+                            <input asp-for="Inscripcion.IdAlumno" value="@Model.idAlumno" type="hidden"/>
+                            <input asp-for="Inscripcion.IdCurso" value="@item.CursoId" type="hidden" />
                             <input type="submit" value="Inscribirse" class="btn btn-primary" />
                         </form>
                     </dl>

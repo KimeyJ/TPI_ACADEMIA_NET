@@ -33,7 +33,7 @@ namespace WebUI.Controllers
         public static async Task<IEnumerable<Docente_Curso>> GetAllAsync(int id, bool tp)
         {
             IEnumerable<Docente_Curso> docente_cursos = null;
-            HttpResponseMessage response = await client.GetAsync("docente_cursos/group/" + id + "/" + tp);
+            HttpResponseMessage response = await client.GetAsync("docente_cursos/all/" + id + "/" + tp);
             if (response.IsSuccessStatusCode)
             {
                 docente_cursos = await response.Content.ReadAsAsync<IEnumerable<Docente_Curso>>();

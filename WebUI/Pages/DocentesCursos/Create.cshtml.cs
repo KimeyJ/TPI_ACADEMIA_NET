@@ -13,10 +13,16 @@ namespace WebUI.Pages.DocentesCursos
 {
     public class CreateModel : PageModel
     {
-        public async Task<IActionResult> OnGet()
+        public int idDocente;
+        public int idCurso;
+        public Persona Docente;
+        public Curso Curso;
+        public async Task<IActionResult> OnGet(int iddocente, int idcurso)
         {
-        ViewData["IdCurso"] = new SelectList(await CursosApiClient.GetAllAsync(0, 0), "CursoId", "Descripcion");
-        ViewData["IdDocente"] = new SelectList(await PersonasApiClient.GetAllAsync(2), "Legajo", "Apellido");
+            idDocente = iddocente;
+            idCurso = idcurso;
+            Docente = await PersonasApiClient.GetAsync(idDocente);
+            Curso = await CursosApiClient.GetAsync(idCurso);
             return Page();
         }
 
@@ -28,7 +34,7 @@ namespace WebUI.Pages.DocentesCursos
         {
             await DocentesCursosApiClient.AddAsync(Docente_Curso);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../AsignarProfesores", new {idcurso = Docente_Curso.IdCurso });
         }
     }
 }

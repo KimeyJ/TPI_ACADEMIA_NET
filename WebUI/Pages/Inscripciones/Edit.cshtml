@@ -15,16 +15,6 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Inscripcion.InscripcionId" />
             <div class="form-group">
-                <label asp-for="Inscripcion.IdAlumno" class="control-label"></label>
-                <select asp-for="Inscripcion.IdAlumno" class="form-control" asp-items="ViewBag.IdAlumno"></select>
-                <span asp-validation-for="Inscripcion.IdAlumno" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Inscripcion.IdCurso" class="control-label"></label>
-                <input asp-for="Inscripcion.IdCurso" class="form-control" />
-                <span asp-validation-for="Inscripcion.IdCurso" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Inscripcion.Nota" class="control-label"></label>
                 <input asp-for="Inscripcion.Nota" class="form-control" />
                 <span asp-validation-for="Inscripcion.Nota" class="text-danger"></span>

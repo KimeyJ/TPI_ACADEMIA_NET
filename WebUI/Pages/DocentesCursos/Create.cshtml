@@ -7,25 +7,77 @@
 
 <h1>Create</h1>
 
-<h4>Docente_Curso</h4>
 <hr />
+<div>
+    <h4>Docente</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Docente.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Docente.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Docente.Apellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Docente.Apellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Docente.Direccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Docente.Direccion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Docente.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Docente.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <h4>Curso</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Curso.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Curso.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Curso.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Curso.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Curso.Cupo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Curso.Cupo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Curso.AñoCalendario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Curso.AñoCalendario)
+        </dd>
+    </dl>
+</div>
 <div class="row">
     <div class="col-md-4">
         <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Docente_Curso.IdDocente" class="control-label"></label>
-                <select asp-for="Docente_Curso.IdDocente" class ="form-control" asp-items="ViewBag.IdDocente"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Docente_Curso.IdCurso" class="control-label"></label>
-                <select asp-for="Docente_Curso.IdCurso" class ="form-control" asp-items="ViewBag.IdCurso"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Docente_Curso.Cargo" class="control-label"></label>
-                <input asp-for="Docente_Curso.Cargo" class="form-control" />
-                <span asp-validation-for="Docente_Curso.Cargo" class="text-danger"></span>
-            </div>
+            <input type="hidden" asp-for="Docente_Curso.IdDocente" value="@Model.idDocente" />
+            <input type="hidden" asp-for="Docente_Curso.IdCurso" value="@Model.idCurso" />
+            <label class="control-label">Cargo</label>
+            <select asp-for="Docente_Curso.Cargo" class="form-control">
+                <option selected="selected" value="1">Teoria</option>
+                <option value="2">Practica</option>
+            </select>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

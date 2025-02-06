@@ -7,21 +7,26 @@ namespace WebUI.Pages
 {
     public class InscripcionAlumnoModel : PageModel
     {
-        public IList<Curso> Curso { get; set; } = default!;
+        public IList<Curso> Cursos { get; set; } = default!;
         public IList<Inscripcion> Inscripciones { get; set; } = default!;
         public string filterString;
-        public int idAlumno = 0;
-        public int idCurso = 0;
+        public int idAlumno;
+        public int idCurso;
+        public Persona persona;
+
+        [BindProperty]
+        public Inscripcion Inscripcion { get; set; } = default!;
 
         public async Task OnGetAsync(string filter, string id, string idcurso)
         {
             idAlumno = Convert.ToInt32(id);
+            persona = await PersonasApiClient.GetAsync(idAlumno);
             idCurso = Convert.ToInt32(idcurso);
             filterString = filter;
-            Curso = (IList<Curso>)await CursosApiClient.GetAllAsync(0, 0);
+            Cursos = (IList<Curso>)await CursosApiClient.GetAllAsync(0, 0);
             Inscripciones = (IList<Inscripcion>)await InscripcionesApiClient.GetAllAsync(idAlumno, false);
 
-            foreach (Curso curso in Curso)
+            foreach (Curso curso in Cursos)
             {
                 curso.Materia = await MateriasApiClient.GetAsync(curso.IdMateria);
                 curso.Comision = await ComisionesApiClient.GetAsync(curso.IdComision);
@@ -30,13 +35,9 @@ namespace WebUI.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            Inscripcion nuevaInscripcion = new Inscripcion();
-            nuevaInscripcion.IdCurso = idCurso;
-            nuevaInscripcion.IdAlumno = idAlumno;
+            await InscripcionesApiClient.AddAsync(Inscripcion);
 
-            await InscripcionesApiClient.AddAsync(nuevaInscripcion);
-
-            return Page();
+            return RedirectToPage("./InscripcionAlumno", new {id = Inscripcion.IdAlumno});
         }
     }
 }

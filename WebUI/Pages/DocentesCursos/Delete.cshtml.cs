@@ -33,6 +33,7 @@ namespace WebUI.Pages.DocentesCursos
             else
             {
                 Docente_Curso = docente_curso;
+                Docente_Curso.Docente = await PersonasApiClient.GetAsync(Docente_Curso.IdDocente);
             }
             return Page();
         }
@@ -51,7 +52,7 @@ namespace WebUI.Pages.DocentesCursos
                 await DocentesCursosApiClient.DeleteAsync(Docente_Curso.Docente_CursoId);
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../AsignarProfesores", new { idcurso = Docente_Curso.IdCurso });
         }
     }
 }

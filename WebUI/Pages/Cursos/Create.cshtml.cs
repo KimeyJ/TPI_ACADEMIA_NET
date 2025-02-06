@@ -27,9 +27,9 @@ namespace WebUI.Pages.Cursos
         public async Task<IActionResult> OnPostAsync()
         {
 
-            await CursosApiClient.AddAsync(Curso);
+            int id = await CursosApiClient.AddAsync(Curso);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../AsignarProfesores", new {idcurso=id});
         }
     }
 }

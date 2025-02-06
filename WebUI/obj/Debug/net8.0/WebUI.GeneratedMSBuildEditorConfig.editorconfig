@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Octavio\Documents\Desarrollo IDE\Net\TPI_ACADEMIA_NET\WebUI
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/AsignarProfesores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXNpZ25hclByb2Zlc29yZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Comisiones/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taXNpb25lc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -236,10 +240,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb3NcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/VerNotas.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVyTm90YXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Octavio/Documents/Desarrollo IDE/Net/TPI_ACADEMIA_NET/WebUI/Pages/_ViewImports.cshtml]

@@ -63,7 +63,7 @@ namespace Domain
             modelBuilder.Entity<Inscripcion>()
                 .HasOne(i => i.Curso)
                 .WithMany(c => c.Alumnos)
-                .HasForeignKey(i => i.IdAlumno).OnDelete(DeleteBehavior.NoAction);
+                .HasForeignKey(i => i.IdCurso);//.OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Materia>()
                   .HasOne(m => m.Plan)

@@ -16,6 +16,9 @@ namespace Domain.Services
             using (var _context = new AcademiaContext())
             {
                 _context.Inscripciones_Alumnos.Add(Inscripcion);
+                Curso Curso = _context.Cursos.Single(c => c.CursoId == Inscripcion.IdCurso);
+                Curso.Cupo -= 1;
+                _context.Cursos.Update(Curso);
                 _context.SaveChanges();
 
                 return Inscripcion.InscripcionId;

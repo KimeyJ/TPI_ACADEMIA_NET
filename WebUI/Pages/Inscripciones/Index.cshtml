@@ -7,48 +7,100 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Inscripcion[0].IdCurso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Inscripcion[0].Alumno)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Inscripcion[0].Curso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Inscripcion[0].Nota)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Inscripcion) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCurso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Alumno.Apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Curso.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nota)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.InscripcionId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.InscripcionId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.InscripcionId">Delete</a>
-            </td>
-        </tr>
+@if(Model.TipoId == false)
+{
+    <p>
+        <a asp-page="../RegistroNotas" asp-route-CursoId="@Model.Id" asp-route-count="0">Registrar Notas Cursantes</a>
+    </p>
 }
-    </tbody>
+
+<table class="table">
+    @if(Model.TipoId)
+    {
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Inscripcion[0].Curso.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Inscripcion[0].Curso.AñoCalendario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Inscripcion[0].Nota)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Inscripcion)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Curso.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Curso.AñoCalendario)
+                    </td>
+                    <td>
+                        @if(item.Nota == 0)
+                        {
+                            @Html.Display("Pendiente")
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.Nota)
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    }
+    else
+    {
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Inscripcion[0].Alumno.Legajo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Inscripcion[0].Alumno.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Inscripcion[0].Alumno.Apellido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Inscripcion[0].Nota)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Inscripcion)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Alumno.Legajo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Alumno.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Alumno.Apellido)
+                    </td>
+                    <td>
+                        @if (item.Nota == 0)
+                        {
+                            @Html.Display("Pendiente")
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.Nota)
+                        }
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Alumno.Legajo">Editar Nota</a>
+                </tr>
+            }
+        </tbody>
+    }
 </table>
